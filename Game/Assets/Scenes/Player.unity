@@ -216,9 +216,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1738616150}
   - component: {fileID: 1738616149}
-  - component: {fileID: 1738616148}
   - component: {fileID: 1738616151}
   - component: {fileID: 1738616152}
+  - component: {fileID: 1738616148}
+  - component: {fileID: 1738616154}
   m_Layer: 0
   m_Name: MainPlayer
   m_TagString: Untagged
@@ -234,7 +235,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738616147}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -287,7 +288,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 46fc9b8af03994f2aa6579f988ac21af, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 53925be1c088040559cbeef5ff504dca, type: 3}
   m_Color: {r: 0.9811321, g: 0.6229239, b: 0.1064436, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -325,7 +326,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1738616147}
---- !u!61 &1738616152
+--- !u!114 &1738616152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738616147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29432f67cab24edb88c2bca2f6c54ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1738616147}
+--- !u!61 &1738616154
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -335,7 +349,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
