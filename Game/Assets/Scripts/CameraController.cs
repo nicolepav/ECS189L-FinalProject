@@ -6,6 +6,11 @@ public class CameraController : MonoBehaviour
 {
     public float speed;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+    
     // Update is called once per frame
     void Update()
     {

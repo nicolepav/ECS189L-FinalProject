@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,8 @@ public class Player : MonoBehaviour
     // scene level names
     // levels[0] is placeholder for current scene name, levels start 1,2,3...
     // must match scene name to string in levels
-    List<string> levels = new List<string>(){"", "Level1"}; 
+    List<string> levels = new List<string>(){"", "Level1"};
+
     void Start()
     {
         this.shouldUpdateLevel = true;
@@ -50,11 +52,24 @@ public class Player : MonoBehaviour
     }
     public GameObject getCamController()
     {
+        this.camController = GameObject.Find("CameraController");
         return this.camController;
     }
-    void OnCollisionEnter2D(Collision2D col)
+    
+    // void OnCollisionEnter2D(Collision2D col)
+    // {
+    //     Debug.Log("OnCollisionEnter2D" + col.gameObject.name);
+    // }
+
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("OnCollisionEnter2D" + col.gameObject.name);
-        
+        if (col.CompareTag("levelTrigger"))
+        {
+            // Debug.Log("Level Trigger activated");
+            GameManager.Instance.UpdateState(player);
+            
+        }
+            
     }
+    
 }
