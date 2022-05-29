@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class LevelManager : MonoBehaviour
     
     void Awake()
     {
-        GameManager.onLevelChange += ChangeLevel;
+        GameManager.OnLevelChange += ChangeLevel;
     }
 
     private void ChangeLevel(GameObject player)

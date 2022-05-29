@@ -10,7 +10,6 @@ public class DialogueManager : MonoBehaviour
     private const float TextTransitionTime = 0.5f;
 
     public static DialogueManager Instance;
-    public static bool isActive = false;
     public Image actorImage;
     public Text actorName;
     public Text messageText;
@@ -23,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
     
     public void OpenDialogue(Message[] messages, Actor[] actors)
@@ -30,9 +30,9 @@ public class DialogueManager : MonoBehaviour
         _messages = messages;
         _actors = actors;
         _activeMessage = 0;
-        isActive = true;
         DisplayMessage();
         backgroundBox.LeanScale(Vector3.one, OpenTime);
+        GameManager.Instance.UpdateState(GameState.DialogueState);
     }
 
     void DisplayMessage()
@@ -57,7 +57,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             backgroundBox.LeanScale(Vector3.zero, CloseTime).setEaseInOutExpo();
-            isActive = false;
+            GameManager.Instance.UpdateState(GameState.PlayState);
         }
     }
 
@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && isActive)
+        if (GameManager.Instance.GetState() == GameState.DialogueState && Input.GetButtonDown("Fire1"))
         {
             NextMessage();
         }

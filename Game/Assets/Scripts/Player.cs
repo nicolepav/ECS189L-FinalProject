@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         // level tracker
         updateLevel();
     }
+    
     void updateLevel()
     {
         // need to update level 
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
             this.camController = GameObject.Find("CameraController");
         }
     }
+    
     public GameObject getCamController()
     {
         this.camController = GameObject.Find("CameraController");
@@ -66,7 +68,7 @@ public class Player : MonoBehaviour
         if (col.CompareTag("levelTrigger"))
         {
             // Debug.Log("Level Trigger activated");
-            GameManager.Instance.UpdateState(player);
+            GameManager.Instance.UpdateLevel(player);
             
         }
             

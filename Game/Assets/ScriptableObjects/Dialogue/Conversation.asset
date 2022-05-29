@@ -15,8 +15,8 @@ MonoBehaviour:
   messages:
   - actorId: 0
     message: Hello World!
-  - actorId: 0
+  - actorId: 1
     message: Goodbye World!
   actors:
   - {fileID: 11400000, guid: 5f101c5ca960b2e44b4bebb80bece157, type: 2}
-  - {fileID: 11400000, guid: 5f101c5ca960b2e44b4bebb80bece157, type: 2}
+  - {fileID: 11400000, guid: a2efed78f7ad2914db71b7bed90e06d1, type: 2}

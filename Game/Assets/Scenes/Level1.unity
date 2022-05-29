@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 82158497}
   - component: {fileID: 82158496}
   m_Layer: 0
-  m_Name: BorderMid (1)
+  m_Name: DialogueTrigger
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 1041980153}
   - component: {fileID: 1041980152}
   - component: {fileID: 1041980151}
+  - component: {fileID: 1041980155}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -979,6 +980,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1041980155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041980150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40cb28b58c1b4c940b3c61520898b1e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actorImage: {fileID: 1227711483}
+  actorName: {fileID: 1362475097}
+  messageText: {fileID: 1393738904}
+  backgroundBox: {fileID: 1814367535}
 --- !u!1 &1227711481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1354,6 @@ GameObject:
   - component: {fileID: 1814367535}
   - component: {fileID: 1814367538}
   - component: {fileID: 1814367537}
-  - component: {fileID: 1814367536}
   m_Layer: 5
   m_Name: Dialogue Box
   m_TagString: Untagged
@@ -1367,22 +1383,6 @@ RectTransform:
   m_AnchoredPosition: {x: -40.12329, y: 164.04272}
   m_SizeDelta: {x: -874.3578, y: 255.1646}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1814367536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814367534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40cb28b58c1b4c940b3c61520898b1e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actorImage: {fileID: 1227711483}
-  actorName: {fileID: 1362475097}
-  messageText: {fileID: 1393738904}
-  backgroundBox: {fileID: 1814367535}
 --- !u!114 &1814367537
 MonoBehaviour:
   m_ObjectHideFlags: 0
