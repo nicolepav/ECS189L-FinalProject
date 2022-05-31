@@ -58,6 +58,8 @@ public class DialogueManager : MonoBehaviour
         {
             backgroundBox.LeanScale(Vector3.zero, CloseTime).setEaseInOutExpo();
             GameManager.Instance.UpdateState(GameState.PlayState);
+            GameManager.Instance.SavedFish++;
+            Debug.Log(GameManager.Instance.SavedFish);
         }
     }
 

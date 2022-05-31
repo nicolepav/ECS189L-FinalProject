@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70056898bb4768349bc05e7e60d812e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 2ede046bd04457745a30c6d1cd3f5413, type: 2}
+  conversation: {fileID: 11400000, guid: 067cbafbad84469478fd14d1fac42e80, type: 2}
 --- !u!61 &605678867
 BoxCollider2D:
   m_ObjectHideFlags: 0

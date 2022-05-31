@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,12 @@ public class Conversation : ScriptableObject
 { 
     public Message[] messages;
     public Actor[] actors;
+    public bool Spoke { get; set; }
+
+    private void OnEnable()
+    {
+        Spoke = false;
+    }
 
     public void StartDialogue()
     {

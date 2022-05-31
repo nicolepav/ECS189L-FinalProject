@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static event Action<GameObject> OnLevelChange;
     public static event Action<GameState> OnStateChange;
     public GameState State;
-    public static int levelIndex = 1;
+    public int SavedFish { get; set; }
 
     void Awake()
     {
@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UpdateState(GameState.PlayState);
+        SavedFish = 0;
     }
     
     public void UpdateState(GameState newState)

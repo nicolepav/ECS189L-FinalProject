@@ -9,6 +9,11 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        conversation.StartDialogue();
+        if (!conversation.Spoke)
+        {
+            conversation.StartDialogue();
+            conversation.Spoke = true;
+        }
+            
     }
 }
