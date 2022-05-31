@@ -9,4 +9,5 @@ public class GameLevel : ScriptableObject
     public string levelName;
     public string levelDescription;
     public Object levelScene;
+    public Vector2 spawnLocation;
 }

@@ -16,3 +16,4 @@ MonoBehaviour:
   levelName: Level 2
   levelDescription: Second Level
   levelScene: {fileID: 102900000, guid: b9a7d216051ec7349a64df3795650b56, type: 3}
+  spawnLocation: {x: -8, y: 0}

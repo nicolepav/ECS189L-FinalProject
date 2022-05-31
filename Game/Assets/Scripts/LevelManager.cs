@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
         scenesToLoad.Add(SceneManager.LoadSceneAsync(levels[_currentLevelIndex].levelScene.name, LoadSceneMode.Additive));
         SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(levels[_currentLevelIndex].levelScene.name));
         scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelScene.name));
+        player.transform.position = levels[_currentLevelIndex].spawnLocation;
     }
     
 }

@@ -67,8 +67,6 @@ public class DialogueManager : MonoBehaviour
     {
         LeanTween.textAlpha(messageText.rectTransform, 0, 0);
         LeanTween.textAlpha(messageText.rectTransform, 1, TextTransitionTime);
-        // LeanTween.textAlpha(actorName.rectTransform, 0, 0);
-        // LeanTween.textAlpha(actorName.rectTransform, 1, TextTransitionTime);
     }
     
     void Start()
