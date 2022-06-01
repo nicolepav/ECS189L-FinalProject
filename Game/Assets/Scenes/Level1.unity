@@ -3209,6 +3209,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2238351970450484320, guid: bb39112d51b1a1a41970948547678e4f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238351970450484320, guid: bb39112d51b1a1a41970948547678e4f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238351970450484320, guid: bb39112d51b1a1a41970948547678e4f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238351970450484320, guid: bb39112d51b1a1a41970948547678e4f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238351970450484321, guid: bb39112d51b1a1a41970948547678e4f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5816642994671486895, guid: 71086120c489543b5ae28d061403a170, type: 3}
     - target: {fileID: 2238351970450484326, guid: bb39112d51b1a1a41970948547678e4f, type: 3}
       propertyPath: m_Name
       value: LevelTrigger
@@ -3259,3 +3279,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb39112d51b1a1a41970948547678e4f, type: 3}
+--- !u!1 &2238351970612914965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2238351970450484326, guid: bb39112d51b1a1a41970948547678e4f, type: 3}
+  m_PrefabInstance: {fileID: 2238351970612914964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2238351970612914966
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238351970612914965}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87f3c983b71ea4086b303a53d6ce2898, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
