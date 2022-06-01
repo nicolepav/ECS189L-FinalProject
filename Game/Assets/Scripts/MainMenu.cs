@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
     }
 
     // Update is called once per frame
