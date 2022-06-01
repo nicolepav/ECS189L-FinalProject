@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCommand
             Physics2D.gravity = this.gravityDirs[this.gravityIndex];
             // rotate camera
             this.player.GetComponent<Player>().getCamController().GetComponent<CameraController>().rotateCamera();
+            //FindObjectOfType<SoundManager>().PlaySoundEffect("Squish");
         } 
     }
 
