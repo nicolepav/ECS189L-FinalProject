@@ -16,3 +16,4 @@ MonoBehaviour:
   levelName: Level 1
   levelDescription: First Level
   levelScene: {fileID: 102900000, guid: 5e605cacae67e4ab3b85a90b8f9d9891, type: 3}
+  spawnLocation: {x: -7, y: -1}

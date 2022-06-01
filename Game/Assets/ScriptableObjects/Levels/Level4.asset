@@ -16,3 +16,4 @@ MonoBehaviour:
   levelName: Level 4
   levelDescription: Fourth Level
   levelScene: {fileID: 102900000, guid: 63afb4caa295d4048ad2945d947db634, type: 3}
+  spawnLocation: {x: 0, y: 21}

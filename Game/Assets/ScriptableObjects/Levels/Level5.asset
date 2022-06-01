@@ -16,3 +16,4 @@ MonoBehaviour:
   levelName: Level 5
   levelDescription: Fifth Level
   levelScene: {fileID: 102900000, guid: 146cf3be7c0ef48fb83d51b781b79577, type: 3}
+  spawnLocation: {x: 0, y: 20}
