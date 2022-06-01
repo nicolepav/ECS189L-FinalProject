@@ -5,26 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log("Banggg");
-
-            SceneManager.LoadSceneAsync("Gameplay");
-
-        }
-    }
-
+    
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync("Gameplay");
+        //When the player clicks the button to start the game, the first scene of the game is loaded.
+        SceneManager.LoadSceneAsync("Gameplay", LoadSceneMode.Additive);
+        
     }
 }

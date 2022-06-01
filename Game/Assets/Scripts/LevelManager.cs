@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameLevel[] levels;
@@ -13,6 +14,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive));
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
     }
