@@ -18,7 +18,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerCommand
     void Start()
     {
         this.deltaVelocity = new Vector2(0.1f, 0.2f);
-        this.deltaGravity = Physics2D.gravity/2;
+        this.deltaGravity = Physics2D.gravity;
+        // this.deltaGravity = new Vector2(0.0f, -2.0f);
         this.gravityDirs = new Vector2[4] {new Vector2(0,deltaGravity.y), // bottom
                                             new Vector2(-deltaGravity.y,0), // right
                                             new Vector2(0,-deltaGravity.y), // top
@@ -42,6 +43,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerCommand
             Physics2D.gravity = this.gravityDirs[this.gravityIndex];
             // rotate camera
             this.player.GetComponent<Player>().getCamController().GetComponent<CameraController>().rotateCamera();
+            // adjust movement accordingly
+            this.FixedUpdate();
         } 
     }
 
