@@ -9,14 +9,14 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
-
     private GameObject camController;
+    
     // level tracking variables
     private bool shouldUpdateLevel; 
     private int nextLevel;
     private int currentLevel;
 
-    // scene level names
+    // scene level 
     // levels[0] is placeholder for current scene name, levels start 1,2,3...
     // must match scene name to string in levels
     List<string> levels = new List<string>(){"", "Level1"};
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         
         DisplayScore.Instance.SetScoreText(this.currentLevel);
     }
-
+ 
     void Update()
     {
         // level tracker
@@ -46,12 +46,15 @@ public class Player : MonoBehaviour
         {
             // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
             SceneManager.MoveGameObjectToScene(this.player, SceneManager.GetSceneByName(this.levels[this.nextLevel]));
+            
             // update cur scene name
             this.levels[0] = this.player.scene.name;
             this.shouldUpdateLevel = false;
+            
             // update nextLevel
             this.nextLevel = this.nextLevel + 1;
             Debug.Log(levels[0]);
+            
             // update camera controller
             this.camController = GameObject.Find("CameraController");
         }
