@@ -45,6 +45,8 @@ namespace PlayerCommand
                     Debug.Log("Err: MoveLeft");
                 }
 
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+
             }
         }
 
