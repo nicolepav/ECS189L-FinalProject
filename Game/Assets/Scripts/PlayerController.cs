@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         float dy = rigidBody.velocity[1];
         float dx = rigidBody.velocity[0];
 
-        Debug.Log("yDir: " + yDir + ", dy: " + dy);
+        // Debug.Log("yDir: " + yDir + ", dy: " + dy);
         // if player is no longer jumping, reset jumps counter
         if ((xDir != 0 && Math.Abs(dx) < 0.001) || (yDir != 0 && Math.Abs(dy) < 0.001))
         {

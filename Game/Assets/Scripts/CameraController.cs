@@ -11,7 +11,6 @@ public class CameraController : MonoBehaviour
     private float totalRotationTime = 0.2f;
     private float degreesPerSecond;
     private int rotationDirection;
-    private float timeElapsed = 0;
     private float degRotated = 0;
 
     private bool isRotating = false;
@@ -76,7 +75,6 @@ public class CameraController : MonoBehaviour
             Debug.Log("Can rotate");
             this.isRotating = true;
             this.rotationDirection = 1;
-            // this.timeElapsed = 0.0f;
             this.degRotated = 0.0f;
         }
     }
@@ -88,7 +86,6 @@ public class CameraController : MonoBehaviour
             Debug.Log("Can rotate");
             this.isRotating = true;
             this.rotationDirection = -1;
-            // this.timeElapsed = 0.0f;
             this.degRotated = 0.0f;
         }
     }

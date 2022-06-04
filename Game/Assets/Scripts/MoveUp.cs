@@ -21,8 +21,8 @@ namespace PlayerCommand
 
         public void Execute(GameObject gameObject) 
         {
-            Debug.Log("Up command executed");
-            Debug.Log("curNumJumps: " + this.curNumJumps);
+            // Debug.Log("Up command executed");
+            // Debug.Log("curNumJumps: " + this.curNumJumps);
 
             var rigidBody = gameObject.GetComponent<Rigidbody2D>();
             this.yDir = Physics2D.gravity[1];

@@ -7,12 +7,10 @@ namespace PlayerCommand
 
     public class AdjustGravityLeft : ScriptableObject, IPlayerCommand
     {
-       
-        private bool isAdjusting = false;
         public void Execute(GameObject gameObject) {
             if (!gameObject.GetComponent<PlayerController>().IsAdjusting)
             {
-                Debug.Log("Updating Left");
+                // Debug.Log("Updating Left");
                 // update is adjusting
                 gameObject.GetComponent<PlayerController>().IsAdjusting = true;
 
