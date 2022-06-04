@@ -80,15 +80,5 @@ public class Player : MonoBehaviour
         }
             
     }
-
-    // rotate player graphic
-    public void RotatePlayerLeft()
-    {
-        // transform.GetChild(0).transform.Rotate(0,0,-90);
-    }
-    public void RotatePlayerRight()
-    {
-        // transform.GetChild(0).transform.Rotate(0,0,90);
-    }
     
 }

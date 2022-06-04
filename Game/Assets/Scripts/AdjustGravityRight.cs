@@ -23,13 +23,10 @@ namespace PlayerCommand
 
                 // set gravity
                 Physics2D.gravity = gameObject.GetComponent<PlayerController>().GravityDirs[localGravityIndex];
-                Debug.Log("new gravity: " + Physics2D.gravity + " with index " + localGravityIndex);
+                // Debug.Log("new gravity: " + Physics2D.gravity + " with index " + localGravityIndex);
 
                 // rotate camera
                 gameObject.GetComponent<Player>().getCamController().rotateCameraRight();
-
-                // rotate player graphic
-                gameObject.GetComponent<Player>().RotatePlayerRight();
             }
         }
     }

@@ -48,7 +48,9 @@ public class CameraController : MonoBehaviour
                     degs = (90.0f - this.degRotated);
                     rotVec = new Vector3(0, 0, this.rotationDirection * (90.0f - this.degRotated));
                 }
+                // rotate camera
                 transform.Rotate(rotVec);
+                // rotate player graphic to speed of camera
                 target.GetComponent<Player>().transform.GetChild(0).transform.Rotate(rotVec);
                 this.degRotated += degs;
                 Debug.Log("degRotated: " + degRotated);
