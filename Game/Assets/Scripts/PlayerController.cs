@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
 
         this._deltaGravity = Physics2D.gravity/2;         // save original gravity TEMPORARY
-        this._deltaVelocity = new Vector2(0.1f, 0.2f);    // to adjust effect of vertical/horizontal movement
+        this._deltaVelocity = new Vector2(0.005f, 0.005f);    // to adjust effect of vertical/horizontal movement
 
         this.GravityDirs = new Vector2[4] { new Vector2(0, this.DeltaGravity.y),   // bottom
                                             new Vector2(-this.DeltaGravity.y, 0),  // right
@@ -101,16 +101,25 @@ public class PlayerController : MonoBehaviour
             // this.adjustGravityRight.Execute(this.gameObject);
         }
 
-        // if (Input.GetButtonDown("Fire2"))
-        // {
-        //     this.adjustGravityRight.Execute(this.gameObject);
-        // }
+        if (Input.GetButtonDown("Fire2") || Input.GetKeyDown(KeyCode.P))
+        {
+            this.adjustGravityRight.Execute(this.gameObject);
+        }
 
 
         // do player animation here
 
     }
 
+    // rotate player graphic
+    public void RotatePlayerLeft(GameObject gameObject)
+    {
+        gameObject.transform.GetChild(0).transform.Rotate(0,0,-90);
+    }
+    public void RotatePlayerRight(GameObject gameObject)
+    {
+        gameObject.transform.GetChild(0).transform.Rotate(0,0,90);
+    }
     
 
     // add collision functions here

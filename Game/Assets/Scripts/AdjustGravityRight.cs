@@ -22,6 +22,8 @@ namespace PlayerCommand
             // rotate camera
             gameObject.GetComponent<Player>().getCamController().GetComponent<CameraController>().rotateCameraRight();
 
+            // rotate player graphic
+            gameObject.GetComponent<PlayerController>().RotatePlayerRight(gameObject);
         }
     }
 }
