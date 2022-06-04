@@ -21,7 +21,7 @@ namespace PlayerCommand
             Debug.Log("new gravity: " + Physics2D.gravity + " with index " + localGravityIndex);
 
             // rotate camera
-            gameObject.GetComponent<Player>().getCamController().GetComponent<CameraController>().rotateCamera();
+            gameObject.GetComponent<Player>().getCamController().GetComponent<CameraController>().rotateCameraLeft();
 
         }
     }

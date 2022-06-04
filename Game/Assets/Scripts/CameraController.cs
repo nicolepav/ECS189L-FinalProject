@@ -23,8 +23,12 @@ public class CameraController : MonoBehaviour
 
         transform.position = cameraPosition;
     }
-    public void rotateCamera()
+    public void rotateCameraRight()
     {
         transform.Rotate(0,0,90);
+    }
+    public void rotateCameraLeft()
+    {
+        transform.Rotate(0,0,-90);
     }
 }
