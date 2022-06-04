@@ -8,11 +8,17 @@ public class PlayerController : MonoBehaviour
 {
     private IPlayerCommand left;
     private IPlayerCommand right;
-    private IPlayerCommand up;
-    private IPlayerCommand adjustGravity;
+    private MoveUp up;
+    // private IPlayerCommand adjustGravity;
     private IPlayerCommand adjustGravityLeft;
     private IPlayerCommand adjustGravityRight;
-
+    private List<Action<bool>> collection;
+    private bool _isAdjusting = false;
+    public bool IsAdjusting
+    {
+        get => _isAdjusting;
+        set => _isAdjusting = value;
+    }
     private int _gravityIndex = 0;
     public int GravityIndex
     {
@@ -48,11 +54,15 @@ public class PlayerController : MonoBehaviour
         this.adjustGravityLeft = ScriptableObject.CreateInstance<AdjustGravityLeft>();
         this.adjustGravityRight = ScriptableObject.CreateInstance<AdjustGravityRight>();
 
+        // this.collection.Add(this.adjustGravityLeft.IsAdjusting);
+        // this.collection.Add(this.adjustGravityRight.IsAdjusting);
+        // this.collection.Add(this.gameObject.GetComponent<Player>().getCamController().IsAdjusting);
+
 
         this._deltaGravity = Physics2D.gravity/2;         // save original gravity TEMPORARY
-        this._deltaVelocity = new Vector2(0.1f, 0.2f);    // to adjust effect of vertical/horizontal movement
+        this._deltaVelocity = new Vector2(0.005f, 0.005f);    // to adjust effect of vertical/horizontal movement
 
-        this.GravityDirs = new Vector2[4] { new Vector2(0, this.DeltaGravity.y),   // bottom
+        this._gravityDirs = new Vector2[4] { new Vector2(0, this.DeltaGravity.y),   // bottom
                                             new Vector2(-this.DeltaGravity.y, 0),  // right
                                             new Vector2(0, -this.DeltaGravity.y),  // top
                                             new Vector2(this.DeltaGravity.y, 0)};  // left
@@ -60,6 +70,20 @@ public class PlayerController : MonoBehaviour
         Physics2D.gravity = this.GravityDirs[this.GravityIndex];
         Debug.Log("gravity on start: " + Physics2D.gravity);
 
+    }
+
+    // gets correct negative and positive modulus of two numbers
+    public int nfmod(int a,int b)
+    {
+        return (int)(a - b * Math.Floor(a / (double)b));
+    }
+
+    public void AdjustingGravity(bool val)
+    {
+        foreach (Action<bool> notif in this.collection)
+        {
+            notif(val);
+        }
     }
 
     // https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html
@@ -74,17 +98,17 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A)) 
         {
-            Debug.Log("A pressed");
+            // Debug.Log("A pressed");
             this.left.Execute(this.gameObject);
         }
 
         if (Input.GetKey(KeyCode.D)) 
         {
-            Debug.Log("D pressed");
+            // Debug.Log("D pressed");
             this.right.Execute(this.gameObject);
         }
 
-        if (Input.GetKey(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.W)) 
         {
             this.up.Execute(this.gameObject);
         }
@@ -92,19 +116,35 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space) ) 
         {
             this.adjustGravityLeft.Execute(this.gameObject);
+            
         }
 
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") || Input.GetKeyDown(KeyCode.P))
         {
             this.adjustGravityRight.Execute(this.gameObject);
         }
 
+        this.SetJump();
 
         // do player animation here
 
     }
-
     
 
     // add collision functions here
+    private void SetJump()
+    {
+        var rigidBody = this.GetComponent<Rigidbody2D>();
+        float yDir = Physics2D.gravity[1];
+        float xDir = Physics2D.gravity[0];
+        float dy = rigidBody.velocity[1];
+        float dx = rigidBody.velocity[0];
+
+        // Debug.Log("yDir: " + yDir + ", dy: " + dy);
+        // if player is no longer jumping, reset jumps counter
+        if ((xDir != 0 && Math.Abs(dx) < 0.001) || (yDir != 0 && Math.Abs(dy) < 0.001))
+        {
+            this.up.SetCurNumJumps(0);
+        } 
+    }
 }

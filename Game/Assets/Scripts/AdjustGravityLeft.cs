@@ -7,21 +7,26 @@ namespace PlayerCommand
 
     public class AdjustGravityLeft : ScriptableObject, IPlayerCommand
     {
-       
         public void Execute(GameObject gameObject) {
+            if (!gameObject.GetComponent<PlayerController>().IsAdjusting)
+            {
+                // Debug.Log("Updating Left");
+                // update is adjusting
+                gameObject.GetComponent<PlayerController>().IsAdjusting = true;
 
-            int localGravityIndex = Mathf.Abs(gameObject.GetComponent<PlayerController>().GravityIndex - 1) % 4;
-            
-            // increment gravity index (which direction are we facing essentially)
-            gameObject.GetComponent<PlayerController>().GravityIndex = (localGravityIndex);
+                int localGravityIndex = gameObject.GetComponent<PlayerController>().nfmod(gameObject.GetComponent<PlayerController>().GravityIndex - 1,4);
+                // Debug.Log("localGravityIndex " + localGravityIndex);
 
-            // set gravity
-            Physics2D.gravity = gameObject.GetComponent<PlayerController>().GravityDirs[localGravityIndex];
-            Debug.Log("new gravity: " + Physics2D.gravity + " with index " + localGravityIndex);
+                // increment gravity index (which direction are we facing essentially)
+                gameObject.GetComponent<PlayerController>().GravityIndex = (localGravityIndex);
 
-            // rotate camera
-            gameObject.GetComponent<Player>().getCamController().GetComponent<CameraController>().rotateCamera();
+                // set gravity
+                Physics2D.gravity = gameObject.GetComponent<PlayerController>().GravityDirs[localGravityIndex];
+                // Debug.Log("new gravity: " + Physics2D.gravity + " with index " + localGravityIndex);
 
+                // rotate camera
+                gameObject.GetComponent<Player>().getCamController().rotateCameraLeft();
+            }
         }
     }
 }
