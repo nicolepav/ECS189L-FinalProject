@@ -19,8 +19,8 @@ namespace PlayerCommand
             Vector2 rigidVel = rigidBody.velocity;
             this.yDir = Math.Sign(Physics2D.gravity[1]);
             this.xDir = Math.Sign(Physics2D.gravity[0]);
-            float dy = 0;
-            float dx = 0;
+            float dy = rigidBody.velocity[1];
+            float dx = rigidBody.velocity[0];
 
             if (rigidBody != null)
             {

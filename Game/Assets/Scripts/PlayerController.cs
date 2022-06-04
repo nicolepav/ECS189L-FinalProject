@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
             this.right.Execute(this.gameObject);
         }
 
-        if (Input.GetKey(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.W)) 
         {
             this.up.Execute(this.gameObject);
         }
