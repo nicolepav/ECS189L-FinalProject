@@ -30,31 +30,17 @@ namespace PlayerCommand
                 if (this.xDir != 0) // gravity going right/left
                 {
                     dy = this.xDir * speed * deltaVelocity.y;
-                    // adjust player graphic direction
-                    if (this.xDir > 0) // gravity right
-                    {
-                        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
-                    } else
-                    {
-                        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
-                    }
                 } 
                 else if (this.yDir != 0)// gravity going up/down
                 {
                     dx = -this.yDir * speed * deltaVelocity.x;
-                    // adjust player graphic direction
-                    if (this.yDir < 0) // gravity down
-                    {
-                        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
-                    } else
-                    {
-                        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
-                    }
-                
                 }else 
                 {
                     Debug.Log("Err: MoveLeft");
                 }
+                // adjust player graphic direction
+                gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+
                 rigidBody.transform.Translate(dx, dy, 0.0f);
                 // Debug.Log("X " + this.xDir + " Y " + this.yDir);
                 // if (this.yDir < 0) 

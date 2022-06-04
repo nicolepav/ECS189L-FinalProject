@@ -18,6 +18,7 @@ namespace PlayerCommand
         {
             Debug.Log("Left command executed");
             var rigidBody = gameObject.GetComponent<Rigidbody2D>();
+            Vector2 rigidVel = rigidBody.velocity;
             this.yDir = Physics2D.gravity[1];
             this.xDir = Physics2D.gravity[0];
             this.deltaVelocity = gameObject.GetComponent<PlayerController>().DeltaVelocity;
@@ -30,32 +31,23 @@ namespace PlayerCommand
                 Debug.Log("X " + this.xDir + " Y " + this.yDir);
                 if (this.xDir != 0) // gravity going right/left
                 {
-                    dy = -this.xDir * speed * deltaVelocity.y;
-                    // adjust player graphic direction
-                    if (this.xDir > 0) // gravity right
-                    {
-                        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
-                    } else
-                    {
-                        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
-                    }
+                    dy = -this.xDir * speed * deltaVelocity.y; 
                 } 
                 else if (this.yDir != 0)// gravity going up/down
                 {
                     dx = this.yDir * speed * deltaVelocity.x;
-                    // adjust player graphic direction
-                    if (this.yDir < 0) // gravity down
-                    {
-                        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
-                    } else
-                    {
-                        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
-                    }
-                
-                }else 
+                }
+                else 
                 {
                     Debug.Log("Err: MoveLeft");
                 }
+                // adjust player graphic direction
+                gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+                // rigidBody.velocity = new Vector2(dx, dy);
+                Debug.Log("rigidBody.velocity: " + rigidBody.velocity);
+                
+
+                // rigidBody.velocity = new Vector3(dx, dy, 0.0f);
                 rigidBody.transform.Translate(dx, dy, 0.0f);
                 // if (this.yDir < 0) 
                 // {
