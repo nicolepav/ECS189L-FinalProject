@@ -62,6 +62,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // gets correct negative and positive modulus of two numbers
+    public int nfmod(int a,int b)
+    {
+        return (int)(a - b * Math.Floor(a / (double)b));
+    }
+
     // https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html
     void Update() 
     {
@@ -92,12 +98,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space) ) 
         {
             this.adjustGravityLeft.Execute(this.gameObject);
+            // this.adjustGravityRight.Execute(this.gameObject);
         }
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            this.adjustGravityRight.Execute(this.gameObject);
-        }
+        // if (Input.GetButtonDown("Fire2"))
+        // {
+        //     this.adjustGravityRight.Execute(this.gameObject);
+        // }
 
 
         // do player animation here

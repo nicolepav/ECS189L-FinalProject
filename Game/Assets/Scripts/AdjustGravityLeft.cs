@@ -10,8 +10,9 @@ namespace PlayerCommand
        
         public void Execute(GameObject gameObject) {
 
-            int localGravityIndex = Mathf.Abs(gameObject.GetComponent<PlayerController>().GravityIndex - 1) % 4;
-            
+            int localGravityIndex = gameObject.GetComponent<PlayerController>().nfmod(gameObject.GetComponent<PlayerController>().GravityIndex - 1,4);
+            Debug.Log("localGravityIndex " + localGravityIndex);
+
             // increment gravity index (which direction are we facing essentially)
             gameObject.GetComponent<PlayerController>().GravityIndex = (localGravityIndex);
 
