@@ -31,6 +31,7 @@ public class CameraController : MonoBehaviour
 
         transform.position = cameraPosition;
 
+        // TO DO: need to rotate exact 90
         if (this.isRotating)
         {
             if (this.timeElapsed <= this.totalRotationTime)
