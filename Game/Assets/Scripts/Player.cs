@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         this.levels[0] = this.player.scene.name;
         
         DisplayScore.Instance.SetScoreText(this.currentLevel);
+        
     }
  
     void Update()
@@ -43,6 +44,11 @@ public class Player : MonoBehaviour
             player.transform.position.y < -30)
         {
             GameManager.Instance.ResetLevel(player);
+        }
+
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            EndCurrentGame();
         }
     }
     
@@ -87,5 +93,14 @@ public class Player : MonoBehaviour
         }
             
     }
+
+
+
+    void EndCurrentGame()
+    {
+        SceneManager.LoadSceneAsync("Ending");
+    }
+
+
     
 }
