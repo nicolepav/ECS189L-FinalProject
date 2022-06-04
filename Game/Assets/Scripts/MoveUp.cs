@@ -46,30 +46,6 @@ namespace PlayerCommand
                 Debug.Log("dx: " + dx + ", dy: " + dy);
                 rigidBody.velocity = new Vector2(dx, dy);
             }
-            // if (rigidBody != null)
-            // {
-            //     Debug.Log("X " + this.xDir + " Y " + this.yDir);
-            //     if (this.yDir < 0) 
-            //     {
-            //         rigidBody.velocity = new Vector2(rigidBody.velocity.x, this.speed);
-            //     }
-            //     else if (this.yDir > 0)
-            //     {
-            //         rigidBody.velocity = new Vector2(rigidBody.velocity.x, -this.speed);
-            //     }
-            //     else if (this.xDir < 0)
-            //     {
-            //         rigidBody.velocity = new Vector2(this.speed, rigidBody.velocity.y);
-            //     }
-            //     else if (this.xDir > 0)
-            //     {
-            //         rigidBody.velocity = new Vector2(-this.speed, rigidBody.velocity.y);
-            //     }
-            //     else 
-            //     {
-            //         Debug.Log("Err: MoveUp");
-            //     }
-            //}
         }
     }
 }
