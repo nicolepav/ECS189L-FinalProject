@@ -40,18 +40,17 @@ public class CameraController : MonoBehaviour
         if (this.isRotating)
         {
             if (this.degRotated < 90.0f)
-            {
+            {   
+                float degs = this.degreesPerSecond * Time.deltaTime;
+                Vector3 rotVec = new Vector3(0, 0, this.rotationDirection * this.degreesPerSecond * Time.deltaTime);
                 if (90.0f - this.degRotated < this.degreesPerSecond * Time.deltaTime)
                 {
-                    transform.Rotate(new Vector3(0, 0, this.rotationDirection * (90.0f - this.degRotated)));
-                    this.degRotated += (90.0f - this.degRotated);
+                    degs = (90.0f - this.degRotated);
+                    rotVec = new Vector3(0, 0, this.rotationDirection * (90.0f - this.degRotated));
                 }
-                else
-                {
-                    transform.Rotate(new Vector3(0, 0, this.rotationDirection * this.degreesPerSecond * Time.deltaTime));
-                    this.timeElapsed += Time.deltaTime;
-                    this.degRotated += this.degreesPerSecond * Time.deltaTime;
-                }
+                transform.Rotate(rotVec);
+                target.GetComponent<Player>().transform.GetChild(0).transform.Rotate(rotVec);
+                this.degRotated += degs;
                 Debug.Log("degRotated: " + degRotated);
 
             }
