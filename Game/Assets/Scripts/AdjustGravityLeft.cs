@@ -8,24 +8,34 @@ namespace PlayerCommand
     public class AdjustGravityLeft : ScriptableObject, IPlayerCommand
     {
        
+        private bool isAdjusting = false;
         public void Execute(GameObject gameObject) {
+            // if (!isAdjusting)
+            // {
+                int localGravityIndex = gameObject.GetComponent<PlayerController>().nfmod(gameObject.GetComponent<PlayerController>().GravityIndex - 1,4);
+                Debug.Log("localGravityIndex " + localGravityIndex);
 
-            int localGravityIndex = gameObject.GetComponent<PlayerController>().nfmod(gameObject.GetComponent<PlayerController>().GravityIndex - 1,4);
-            Debug.Log("localGravityIndex " + localGravityIndex);
+                // increment gravity index (which direction are we facing essentially)
+                gameObject.GetComponent<PlayerController>().GravityIndex = (localGravityIndex);
 
-            // increment gravity index (which direction are we facing essentially)
-            gameObject.GetComponent<PlayerController>().GravityIndex = (localGravityIndex);
+                // set gravity
+                Physics2D.gravity = gameObject.GetComponent<PlayerController>().GravityDirs[localGravityIndex];
+                Debug.Log("new gravity: " + Physics2D.gravity + " with index " + localGravityIndex);
 
-            // set gravity
-            Physics2D.gravity = gameObject.GetComponent<PlayerController>().GravityDirs[localGravityIndex];
-            Debug.Log("new gravity: " + Physics2D.gravity + " with index " + localGravityIndex);
+                // rotate camera
+                gameObject.GetComponent<Player>().getCamController().rotateCameraLeft();
 
-            // rotate camera
-            gameObject.GetComponent<Player>().getCamController().GetComponent<CameraController>().rotateCameraLeft();
-
-            // rotate player graphic
-            gameObject.GetComponent<PlayerController>().RotatePlayerLeft(gameObject);
+                // rotate player graphic
+                gameObject.GetComponent<Player>().RotatePlayerLeft();
+            // }
         }
+        
+        // public void IsAdjusting(bool val)
+        // {
+        //     // this.isAdjusting = val;
+        //     Debug.Log("reached gravityleft");
+
+        // }
     }
 }
 

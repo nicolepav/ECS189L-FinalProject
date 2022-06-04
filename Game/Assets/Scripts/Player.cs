@@ -60,10 +60,10 @@ public class Player : MonoBehaviour
         }
     }
     
-    public GameObject getCamController()
+    public CameraController getCamController()
     {
         this.camController = GameObject.Find("CameraController");
-        return this.camController;
+        return this.camController.GetComponent<CameraController>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -79,6 +79,16 @@ public class Player : MonoBehaviour
             
         }
             
+    }
+
+    // rotate player graphic
+    public void RotatePlayerLeft()
+    {
+        transform.GetChild(0).transform.Rotate(0,0,-90);
+    }
+    public void RotatePlayerRight()
+    {
+        transform.GetChild(0).transform.Rotate(0,0,90);
     }
     
 }
