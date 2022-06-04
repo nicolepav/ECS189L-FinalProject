@@ -109,16 +109,6 @@ public class PlayerController : MonoBehaviour
         // do player animation here
 
     }
-
-    // rotate player graphic
-    public void RotatePlayerLeft(GameObject gameObject)
-    {
-        gameObject.transform.GetChild(0).transform.Rotate(0,0,-90);
-    }
-    public void RotatePlayerRight(GameObject gameObject)
-    {
-        gameObject.transform.GetChild(0).transform.Rotate(0,0,90);
-    }
     
 
     // add collision functions here
