@@ -31,12 +31,18 @@ public class Player : MonoBehaviour
         this.levels[0] = this.player.scene.name;
         
         DisplayScore.Instance.SetScoreText(this.currentLevel);
+        
     }
 
     void Update()
     {
         // level tracker
         updateLevel();
+
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            EndCurrentGame();
+        }
     }
     void updateLevel()
     {
@@ -75,5 +81,14 @@ public class Player : MonoBehaviour
         }
             
     }
+
+
+
+    void EndCurrentGame()
+    {
+        SceneManager.LoadSceneAsync("Ending");
+    }
+
+
     
 }

@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HUD.unity
     guid: 873ea631bf6faf443935fba8fe044ddc
+  - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: 4120ce81a08b0404e927c90c6f89e6a0
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 3d8d0b3e250a7dc4796e060b965b1747
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 912618e6ac991fc4ea3db4083c5fb74a
   m_configObjects: {}
