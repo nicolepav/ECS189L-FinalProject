@@ -10,32 +10,30 @@ namespace PlayerCommand
        
         private bool isAdjusting = false;
         public void Execute(GameObject gameObject) {
-            // if (!isAdjusting)
-            // {
+            if (!gameObject.GetComponent<PlayerController>().IsAdjusting)
+            {
+                Debug.Log("Updating Left");
+                // update is adjusting
+                gameObject.GetComponent<PlayerController>().IsAdjusting = true;
+
                 int localGravityIndex = gameObject.GetComponent<PlayerController>().nfmod(gameObject.GetComponent<PlayerController>().GravityIndex - 1,4);
-                Debug.Log("localGravityIndex " + localGravityIndex);
+                // Debug.Log("localGravityIndex " + localGravityIndex);
 
                 // increment gravity index (which direction are we facing essentially)
                 gameObject.GetComponent<PlayerController>().GravityIndex = (localGravityIndex);
 
                 // set gravity
                 Physics2D.gravity = gameObject.GetComponent<PlayerController>().GravityDirs[localGravityIndex];
-                Debug.Log("new gravity: " + Physics2D.gravity + " with index " + localGravityIndex);
+                // Debug.Log("new gravity: " + Physics2D.gravity + " with index " + localGravityIndex);
 
                 // rotate camera
                 gameObject.GetComponent<Player>().getCamController().rotateCameraLeft();
 
                 // rotate player graphic
                 gameObject.GetComponent<Player>().RotatePlayerLeft();
-            // }
-        }
-        
-        // public void IsAdjusting(bool val)
-        // {
-        //     // this.isAdjusting = val;
-        //     Debug.Log("reached gravityleft");
 
-        // }
+            }
+        }
     }
 }
 

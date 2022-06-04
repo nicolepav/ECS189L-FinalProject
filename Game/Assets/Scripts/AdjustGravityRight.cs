@@ -10,8 +10,11 @@ namespace PlayerCommand
         private bool isAdjusting = false;
        
         public void Execute(GameObject gameObject) {
-            if (!isAdjusting)
+            if (!gameObject.GetComponent<PlayerController>().IsAdjusting)
             {
+                Debug.Log("Updating Right");
+                // update is adjusting
+                gameObject.GetComponent<PlayerController>().IsAdjusting = true;
 
                 int localGravityIndex = (gameObject.GetComponent<PlayerController>().GravityIndex + 1) % 4;
                 
@@ -28,13 +31,6 @@ namespace PlayerCommand
                 // rotate player graphic
                 gameObject.GetComponent<Player>().RotatePlayerRight();
             }
-        }
-
-        public void IsAdjusting(bool val)
-        {
-            this.isAdjusting = val;
-            Debug.Log("reached gravityright");
-
         }
     }
 }

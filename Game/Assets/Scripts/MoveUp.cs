@@ -45,6 +45,10 @@ namespace PlayerCommand
             }
         }
 
+        public void IsAdjusting(bool val)
+        {
+            // this.isAdjusting = val;
+        }
     }
 }
 
