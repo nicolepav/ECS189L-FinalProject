@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject player;
     private GameObject camController;
-    
+
     // level tracking variables
     private bool shouldUpdateLevel; 
     private int nextLevel;
@@ -37,6 +37,13 @@ public class Player : MonoBehaviour
     {
         // level tracker
         updateLevel();
+        
+        // respawn
+        if (player.transform.position.x > 50 || player.transform.position.x < -50 || player.transform.position.y > 30 ||
+            player.transform.position.y < -30)
+        {
+            GameManager.Instance.ResetLevel(player);
+        }
     }
     
     void updateLevel()

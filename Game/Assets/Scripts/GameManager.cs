@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     
     public static event Action<GameObject> OnLevelChange;
+    public static event Action<GameObject> OnDeath;
     public static event Action<GameState> OnStateChange;
     public GameState State;
     public int SavedFish { get; set; }
+    public int LifeCounter { get; set; }
 
     void Awake()
     {
@@ -19,8 +21,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateState(GameState.PlayState);
+        UpdateState(GameState.MenuState);
         SavedFish = 0;
+        LifeCounter = 3;
     }
     
     public void UpdateState(GameState newState)
@@ -35,6 +38,15 @@ public class GameManager : MonoBehaviour
         OnLevelChange?.Invoke(player);
     }
 
+    public void ResetLevel(GameObject player)
+    {
+        LifeCounter--;
+        if (LifeCounter <= 0)
+            UpdateState(GameState.GameOverState);
+        else
+            OnDeath?.Invoke(player);
+    }
+
     public GameState GetState()
     {
         return State;
@@ -45,5 +57,6 @@ public enum GameState
 {
     MenuState,
     PlayState,
-    DialogueState
+    DialogueState,
+    GameOverState
 }

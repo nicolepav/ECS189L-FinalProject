@@ -14,16 +14,15 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive));
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("Title"));
     }
     
     void Awake()
     {
         GameManager.OnLevelChange += ChangeLevel;
+        GameManager.OnDeath += ResetLevel;
+        GameManager.OnStateChange += StartGame;
+        GameManager.OnStateChange += GameOver;
     }
 
     private void ChangeLevel(GameObject player)
@@ -34,5 +33,37 @@ public class LevelManager : MonoBehaviour
         scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelScene.name));
         player.transform.position = levels[_currentLevelIndex].spawnLocation;
     }
-    
+
+    private void ResetLevel(GameObject player)
+    {
+        player.transform.position = levels[_currentLevelIndex].spawnLocation;
+    }
+
+    private void GameOver(GameState gameState)
+    {
+        if (gameState == GameState.GameOverState)
+        {
+            // Gameover Scene
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Title"));
+            
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelScene.name));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("HUD"));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
+        }
+    }
+
+    private void StartGame(GameState gameState)
+    {
+        if (gameState == GameState.PlayState)
+        {
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive));
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
+            
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Title"));
+        }
+    }
 }
