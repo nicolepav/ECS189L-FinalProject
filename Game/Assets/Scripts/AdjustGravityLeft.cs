@@ -26,8 +26,6 @@ namespace PlayerCommand
             // rotate player graphic
             gameObject.GetComponent<PlayerController>().RotatePlayerLeft(gameObject);
         }
-        
-       
     }
 }
 

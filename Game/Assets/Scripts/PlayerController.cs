@@ -98,7 +98,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space) ) 
         {
             this.adjustGravityLeft.Execute(this.gameObject);
-            // this.adjustGravityRight.Execute(this.gameObject);
         }
 
         if (Input.GetButtonDown("Fire2") || Input.GetKeyDown(KeyCode.P))

@@ -39,8 +39,6 @@ namespace PlayerCommand
                     {
                         gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
                     }
-                    // this.player.transform.Translate(-xDir * moveVertical * deltaVelocity.y, xDir * moveHorizontal * deltaVelocity.x, 0.0f);
-
                 } 
                 else if (this.yDir != 0)// gravity going up/down
                 {
@@ -53,9 +51,7 @@ namespace PlayerCommand
                     {
                         gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
                     }
-                    // Debug.Log("dx: "+ dx);
-                    // dy = -this.yDir * speed * deltaVelocity.y;
-                    // this.player.transform.Translate(-yDir * moveHorizontal * deltaVelocity.x, -yDir * moveVertical * deltaVelocity.y, 0.0f);
+                
                 }else 
                 {
                     Debug.Log("Err: MoveLeft");
