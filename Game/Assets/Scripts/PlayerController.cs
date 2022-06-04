@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private IPlayerCommand left;
     private IPlayerCommand right;
-    private IPlayerCommand up;
+    private MoveUp up;
     // private IPlayerCommand adjustGravity;
     private IPlayerCommand adjustGravityLeft;
     private IPlayerCommand adjustGravityRight;
@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
             this.adjustGravityRight.Execute(this.gameObject);
         }
 
+        this.SetJump();
 
         // do player animation here
 
@@ -131,4 +132,19 @@ public class PlayerController : MonoBehaviour
     
 
     // add collision functions here
+    private void SetJump()
+    {
+        var rigidBody = this.GetComponent<Rigidbody2D>();
+        float yDir = Physics2D.gravity[1];
+        float xDir = Physics2D.gravity[0];
+        float dy = rigidBody.velocity[1];
+        float dx = rigidBody.velocity[0];
+
+        Debug.Log("yDir: " + yDir + ", dy: " + dy);
+        // if player is no longer jumping, reset jumps counter
+        if ((xDir != 0 && Math.Abs(dx) < 0.001) || (yDir != 0 && Math.Abs(dy) < 0.001))
+        {
+            this.up.SetCurNumJumps(0);
+        } 
+    }
 }

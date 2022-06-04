@@ -8,20 +8,29 @@ namespace PlayerCommand
 {
     public class MoveUp : ScriptableObject, IPlayerCommand
     {
-        private float speed = 6.0f;
+        private float speed = 4.0f;
         private float yDir;
-        private float xDir;         
+        private float xDir; 
+        private int limitJumps = 2; 
+        private int curNumJumps = 0; 
+
+        public void SetCurNumJumps(int value)
+        {
+            this.curNumJumps = value;
+        }      
 
         public void Execute(GameObject gameObject) 
         {
             Debug.Log("Up command executed");
+            Debug.Log("curNumJumps: " + this.curNumJumps);
+
             var rigidBody = gameObject.GetComponent<Rigidbody2D>();
             this.yDir = Physics2D.gravity[1];
             this.xDir = Physics2D.gravity[0];
             float dy = rigidBody.velocity[1];
             float dx = rigidBody.velocity[0];
 
-            if (rigidBody != null)
+            if (rigidBody != null && this.curNumJumps < this.limitJumps)
             {
                 if (this.xDir > 0) // gravity going right
                 {
@@ -43,7 +52,10 @@ namespace PlayerCommand
                 {
                     Debug.Log("Err: MoveUp");
                 }
-                Debug.Log("dx: " + dx + ", dy: " + dy);
+
+                // Debug.Log("dx: " + dx + ", dy: " + dy);
+                // increment jump counter
+                this.curNumJumps++;
                 rigidBody.velocity = new Vector2(dx, dy);
             }
         }
