@@ -34,10 +34,11 @@ public class CameraController : MonoBehaviour
             var cameraPosition = transform.position;
             // set camera position to target's position
             cameraPosition = new Vector3(targetPosition.x, targetPosition.y, cameraPosition.z);
+            this.AdjustBounds();
 
             transform.position = cameraPosition;
 
-            // TO DO: need to rotate exact 90
+            // Rotate if needed
             if (this.isRotating)
             {
                 if (this.degRotated < 90.0f)
@@ -69,25 +70,21 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void rotateCameraRight()
+    private void AdjustBounds()
     {
-        // transform.Rotate(0,0,90);
-        if (!this.isRotating)
-        {
-            Debug.Log("Can rotate");
-            this.isRotating = true;
-            this.rotationDirection = 1;
-            this.degRotated = 0.0f;
-        }
+        
     }
-    public void rotateCameraLeft()
+
+    // -1 : left,
+    // 1 : right
+    public void rotateCamera(int dir)
     {
         // transform.Rotate(0,0,-90);
         if (!this.isRotating)
         {
             Debug.Log("Can rotate");
             this.isRotating = true;
-            this.rotationDirection = -1;
+            this.rotationDirection = dir;
             this.degRotated = 0.0f;
         }
     }
