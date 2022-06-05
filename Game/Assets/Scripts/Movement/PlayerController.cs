@@ -53,23 +53,23 @@ public class PlayerController : MonoBehaviour
         this.up =  ScriptableObject.CreateInstance<MoveUp>();
         this.adjustGravityLeft = ScriptableObject.CreateInstance<AdjustGravityLeft>();
         this.adjustGravityRight = ScriptableObject.CreateInstance<AdjustGravityRight>();
-
+    
         // this.collection.Add(this.adjustGravityLeft.IsAdjusting);
         // this.collection.Add(this.adjustGravityRight.IsAdjusting);
         // this.collection.Add(this.gameObject.GetComponent<Player>().getCamController().IsAdjusting);
-
-
+    
+    
         this._deltaGravity = Physics2D.gravity/2;         // save original gravity TEMPORARY
         this._deltaVelocity = new Vector2(0.005f, 0.005f);    // to adjust effect of vertical/horizontal movement
-
+    
         this._gravityDirs = new Vector2[4] { new Vector2(0, this.DeltaGravity.y),   // bottom
                                             new Vector2(-this.DeltaGravity.y, 0),  // right
                                             new Vector2(0, -this.DeltaGravity.y),  // top
                                             new Vector2(this.DeltaGravity.y, 0)};  // left
-
+    
         Physics2D.gravity = this.GravityDirs[this.GravityIndex];
         Debug.Log("gravity on start: " + Physics2D.gravity);
-
+    
     }
 
     // gets correct negative and positive modulus of two numbers
