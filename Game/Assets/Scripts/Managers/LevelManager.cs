@@ -69,6 +69,8 @@ public class LevelManager : MonoBehaviour
     {
         if (gameState == GameState.PlayState)
         {
+            Physics2D.gravity = new Vector2(0f, -9.81f);
+            
             _currentLevelIndex = 0;
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));

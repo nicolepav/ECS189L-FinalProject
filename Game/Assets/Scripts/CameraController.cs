@@ -18,7 +18,8 @@ public class CameraController : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-
+        
+        
         this.degreesPerSecond = 90 / this.totalRotationTime;
         // this.degreesPerSecond = Mathf.Lerp(0f, 90f, this.totalRotationTime);
         Debug.Log("degreesPerSecond: " + degreesPerSecond);
@@ -90,6 +91,11 @@ public class CameraController : MonoBehaviour
             this.rotationDirection = -1;
             this.degRotated = 0.0f;
         }
+    }
+
+    public void ResetCamera()
+    {
+        
     }
 }
 
