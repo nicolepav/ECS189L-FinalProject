@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 162198640}
   - component: {fileID: 162198639}
   - component: {fileID: 162198638}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderMid (1)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1237,7 +1237,7 @@ GameObject:
   - component: {fileID: 639524695}
   - component: {fileID: 639524694}
   - component: {fileID: 639524693}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderRight
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1637,7 +1637,7 @@ GameObject:
   - component: {fileID: 916240667}
   - component: {fileID: 916240666}
   - component: {fileID: 916240665}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderMid
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1871,7 +1871,7 @@ GameObject:
   - component: {fileID: 988736374}
   - component: {fileID: 988736376}
   - component: {fileID: 988736375}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cap
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1980,7 +1980,7 @@ GameObject:
   - component: {fileID: 1000919378}
   - component: {fileID: 1000919377}
   - component: {fileID: 1000919376}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderRight (1)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -2419,7 +2419,7 @@ GameObject:
   - component: {fileID: 1431517236}
   - component: {fileID: 1431517235}
   - component: {fileID: 1431517234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderBottom (1)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -2528,7 +2528,7 @@ GameObject:
   - component: {fileID: 1458581357}
   - component: {fileID: 1458581356}
   - component: {fileID: 1458581355}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderLeft (1)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -2868,7 +2868,7 @@ GameObject:
   - component: {fileID: 1646629954}
   - component: {fileID: 1646629953}
   - component: {fileID: 1646629952}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderBottom
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -2977,7 +2977,7 @@ GameObject:
   - component: {fileID: 1748463400}
   - component: {fileID: 1748463399}
   - component: {fileID: 1748463398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderMid (2)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -4666,7 +4666,7 @@ GameObject:
   - component: {fileID: 1944128545}
   - component: {fileID: 1944128544}
   - component: {fileID: 1944128543}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderLeft
   m_TagString: wall
   m_Icon: {fileID: 0}
