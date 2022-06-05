@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Title"));
+        HUDManager.Instance.Hide();
     }
     
     void Awake()
@@ -37,19 +38,23 @@ public class LevelManager : MonoBehaviour
     private void ResetLevel(GameObject player)
     {
         player.transform.position = levels[_currentLevelIndex].spawnLocation;
+        HUDManager.Instance.UpdateLives();
     }
 
     private void GameOver(GameState gameState)
     {
         if (gameState == GameState.GameOverState)
         {
+            HUDManager.Instance.Hide();
+            
             // Gameover Scene
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Title"));
             
             scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelScene.name));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync("HUD"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
+            
+            
         }
     }
 
@@ -57,13 +62,17 @@ public class LevelManager : MonoBehaviour
     {
         if (gameState == GameState.PlayState)
         {
+            
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
-            scenesToLoad.Add(SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
             
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Title"));
+            
+            HUDManager.Instance.Show();
+            HUDManager.Instance.UpdateScore();
+            HUDManager.Instance.UpdateLives();
         }
     }
 }
