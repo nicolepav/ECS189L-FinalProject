@@ -9,7 +9,6 @@ public class HUDManager : MonoBehaviour
     public static HUDManager Instance;
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI livesText;
 
     //For every life the player has left, a bubble is displayed
     [SerializeField] GameObject livesBubble1;
@@ -26,14 +25,9 @@ public class HUDManager : MonoBehaviour
         scoreText.text = "Fish saved: " + GameManager.Instance.SavedFish;
     }
     
-    public void UpdateLives()
-    {
-        livesText.text = "Lives left: " + GameManager.Instance.LifeCounter;
-        UpdateBubbleCount();
-    }
 
     //This function updates the number of bubbles displayed based on the number of lives the player has left
-    void UpdateBubbleCount()
+    public void UpdateBubbleCount()
     {
         switch (GameManager.Instance.LifeCounter)
         {
