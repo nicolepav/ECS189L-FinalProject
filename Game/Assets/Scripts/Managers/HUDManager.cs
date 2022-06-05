@@ -11,9 +11,9 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
 
     //For every life the player has left, a bubble is displayed
-    [SerializeField] GameObject livesBubble1;
-    [SerializeField] GameObject livesBubble2;
-    [SerializeField] GameObject livesBubble3;
+    [SerializeField] private GameObject livesBubble1;
+    [SerializeField] private GameObject livesBubble2;
+    [SerializeField] private GameObject livesBubble3;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class HUDManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        scoreText.text = "Fish saved: " + GameManager.Instance.SavedFish;
+        scoreText.text = "x" + GameManager.Instance.SavedFish;
     }
     
 
