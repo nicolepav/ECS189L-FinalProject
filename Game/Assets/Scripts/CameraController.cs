@@ -28,43 +28,45 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         GameObject target = GameObject.Find("MainPlayer");
-        var targetPosition = target.transform.position;
-        var cameraPosition = transform.position;
-        // set camera position to target's position
-        cameraPosition = new Vector3(targetPosition.x, targetPosition.y, cameraPosition.z);
-
-        transform.position = cameraPosition;
-
-        // TO DO: need to rotate exact 90
-        if (this.isRotating)
+        if (target)
         {
-            if (this.degRotated < 90.0f)
-            {   
-                float degs = this.degreesPerSecond * Time.deltaTime;
-                Vector3 rotVec = new Vector3(0, 0, this.rotationDirection * this.degreesPerSecond * Time.deltaTime);
-                if (90.0f - this.degRotated < this.degreesPerSecond * Time.deltaTime)
-                {
-                    degs = (90.0f - this.degRotated);
-                    rotVec = new Vector3(0, 0, this.rotationDirection * (90.0f - this.degRotated));
-                }
-                // rotate camera
-                transform.Rotate(rotVec);
-                // rotate player graphic to speed of camera
-                target.GetComponent<Player>().transform.GetChild(0).transform.Rotate(rotVec);
-                this.degRotated += degs;
-                Debug.Log("degRotated: " + degRotated);
+            var targetPosition = target.transform.position;
+            var cameraPosition = transform.position;
+            // set camera position to target's position
+            cameraPosition = new Vector3(targetPosition.x, targetPosition.y, cameraPosition.z);
 
-            }
-            else
+            transform.position = cameraPosition;
+
+            // TO DO: need to rotate exact 90
+            if (this.isRotating)
             {
-                Debug.Log("Done rotating");
-                this.isRotating = false;
+                if (this.degRotated < 90.0f)
+                {   
+                    float degs = this.degreesPerSecond * Time.deltaTime;
+                    Vector3 rotVec = new Vector3(0, 0, this.rotationDirection * this.degreesPerSecond * Time.deltaTime);
+                    if (90.0f - this.degRotated < this.degreesPerSecond * Time.deltaTime)
+                    {
+                        degs = (90.0f - this.degRotated);
+                        rotVec = new Vector3(0, 0, this.rotationDirection * (90.0f - this.degRotated));
+                    }
+                    // rotate camera
+                    transform.Rotate(rotVec);
+                    // rotate player graphic to speed of camera
+                    target.GetComponent<Player>().transform.GetChild(0).transform.Rotate(rotVec);
+                    this.degRotated += degs;
+                    Debug.Log("degRotated: " + degRotated);
 
-                //can adjust
-                target.GetComponent<PlayerController>().IsAdjusting = false;
+                }
+                else
+                {
+                    Debug.Log("Done rotating");
+                    this.isRotating = false;
+
+                    //can adjust
+                    target.GetComponent<PlayerController>().IsAdjusting = false;
+                }
             }
         }
-        
     }
 
     public void rotateCameraRight()
