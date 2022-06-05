@@ -25,13 +25,9 @@ public class Player : MonoBehaviour
     {
         this.shouldUpdateLevel = true;
         this.nextLevel = 1;
-
-        //I added an int for the current level to test the text display
-        this.currentLevel = 1;
+        
         this.levels[0] = this.player.scene.name;
-        
-        DisplayScore.Instance.SetScoreText(this.currentLevel);
-        
+
     }
  
     void Update()
@@ -83,10 +79,6 @@ public class Player : MonoBehaviour
     {
         if (col.CompareTag("levelTrigger"))
         {
-            //I invoked the function to update the displayed score.
-            this.currentLevel+=1;
-            DisplayScore.Instance.SetScoreText(this.currentLevel);
-
             // Debug.Log("Level Trigger activated");
             GameManager.Instance.UpdateLevel(player);
             
