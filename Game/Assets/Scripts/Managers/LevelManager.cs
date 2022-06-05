@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
     private void ResetLevel(GameObject player)
     {
         player.transform.position = levels[_currentLevelIndex].spawnLocation;
-        HUDManager.Instance.UpdateLives();
+        HUDManager.Instance.UpdateBubbleCount();
     }
 
     private void GameOver(GameState gameState)
@@ -83,7 +83,8 @@ public class LevelManager : MonoBehaviour
             
             HUDManager.Instance.Show();
             HUDManager.Instance.UpdateScore();
-            HUDManager.Instance.UpdateLives();
+            GameManager.Instance.LifeCounter = 3;
+            HUDManager.Instance.UpdateBubbleCount();
         }
     }
 
