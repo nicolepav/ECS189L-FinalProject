@@ -107,6 +107,7 @@ public class LevelManager : MonoBehaviour
         if (gameState == GameState.EndingState)
         {
             _end = true;
+            _prologue = false;
             HUDManager.Instance.Hide();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Ending"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelScene.name));
