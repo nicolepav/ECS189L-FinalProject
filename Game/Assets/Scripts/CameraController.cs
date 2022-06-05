@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        
+        GameManager.OnStateChange += ResetCamera;
         
         this.degreesPerSecond = 90 / this.totalRotationTime;
         // this.degreesPerSecond = Mathf.Lerp(0f, 90f, this.totalRotationTime);
@@ -93,9 +93,10 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void ResetCamera()
+    public void ResetCamera(GameState gameState)
     {
-        
+        if(gameState == GameState.PlayState)
+            transform.eulerAngles = new Vector3(0, 0, 0);
     }
 }
 
