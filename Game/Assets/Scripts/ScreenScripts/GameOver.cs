@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour
 
     public void ExitGame()
     {
-        // SceneManager.LoadSceneAsync("Title");
+        GameManager.Instance.UpdateState(GameState.MenuState);
     }
 
 }

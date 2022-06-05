@@ -9,7 +9,11 @@ public class HUDManager : MonoBehaviour
     public static HUDManager Instance;
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI livesText;
+
+    //For every life the player has left, a bubble is displayed
+    [SerializeField] private GameObject livesBubble1;
+    [SerializeField] private GameObject livesBubble2;
+    [SerializeField] private GameObject livesBubble3;
 
     private void Awake()
     {
@@ -18,13 +22,39 @@ public class HUDManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        scoreText.text = "Fish saved: " + GameManager.Instance.SavedFish;
+        scoreText.text = "x" + GameManager.Instance.SavedFish;
     }
     
-    public void UpdateLives()
+
+    //This function updates the number of bubbles displayed based on the number of lives the player has left
+    public void UpdateBubbleCount()
     {
-        livesText.text = "Lives left: " + GameManager.Instance.LifeCounter;
+        switch (GameManager.Instance.LifeCounter)
+        {
+        case 3:
+            livesBubble1.SetActive(true);
+            livesBubble2.SetActive(true);
+            livesBubble3.SetActive(true);
+            break;
+        case 2:
+            livesBubble1.SetActive(true);
+            livesBubble2.SetActive(true);
+            livesBubble3.SetActive(false);
+            break;
+        case 1:
+            livesBubble1.SetActive(true);
+            livesBubble2.SetActive(false);
+            livesBubble3.SetActive(false);
+            break;
+        default:
+            livesBubble1.SetActive(false);
+            livesBubble2.SetActive(false);
+            livesBubble3.SetActive(false);
+            break;
+        }
     }
+
+
 
     public void Hide()
     {

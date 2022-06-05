@@ -9,70 +9,28 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
-    private GameObject camController;
-
-    // level tracking variables
-    private bool shouldUpdateLevel; 
-    private int nextLevel;
-    private int currentLevel;
-
-    // scene level 
-    // levels[0] is placeholder for current scene name, levels start 1,2,3...
-    // must match scene name to string in levels
-    List<string> levels = new List<string>(){"", "Level1"};
+    private GameObject _camController;
+    
 
     void Start()
     {
-        this.shouldUpdateLevel = true;
-        this.nextLevel = 1;
         
-        this.levels[0] = this.player.scene.name;
-
     }
  
     void Update()
     {
-        // level tracker
-        updateLevel();
-        
         // respawn
         if (player.transform.position.x > 50 || player.transform.position.x < -50 || player.transform.position.y > 30 ||
             player.transform.position.y < -30)
         {
             GameManager.Instance.ResetLevel(player);
         }
+    }
 
-        if(Input.GetKeyDown(KeyCode.X))
-        {
-            EndCurrentGame();
-        }
-    }
-    
-    void updateLevel()
+    public CameraController GetCamController()
     {
-        // need to update level 
-        if (this.shouldUpdateLevel && !this.levels[0].Equals(this.levels[this.nextLevel]))
-        {
-            // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
-            SceneManager.MoveGameObjectToScene(this.player, SceneManager.GetSceneByName(this.levels[this.nextLevel]));
-            
-            // update cur scene name
-            this.levels[0] = this.player.scene.name;
-            this.shouldUpdateLevel = false;
-            
-            // update nextLevel
-            this.nextLevel = this.nextLevel + 1;
-            Debug.Log(levels[0]);
-            
-            // update camera controller
-            this.camController = GameObject.Find("CameraController");
-        }
-    }
-    
-    public CameraController getCamController()
-    {
-        this.camController = GameObject.Find("CameraController");
-        return this.camController.GetComponent<CameraController>();
+        _camController = GameObject.Find("CameraController");
+        return _camController.GetComponent<CameraController>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -83,23 +41,11 @@ public class Player : MonoBehaviour
             GameManager.Instance.UpdateLevel(player);
             
         }
-        
-        if (col.CompareTag("fish"))
+        else if (col.CompareTag("fish"))
         {
             col.gameObject.SetActive(false);
             GameManager.Instance.SavedFish++;
             HUDManager.Instance.UpdateScore();
         }
-            
     }
-
-
-
-    void EndCurrentGame()
-    {
-        SceneManager.LoadSceneAsync("Ending");
-    }
-
-
-    
 }

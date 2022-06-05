@@ -9,7 +9,9 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameLevel[] levels;
     private int _currentLevelIndex = 0;
-    private bool _readPrologue = false;
+    private bool _prologue = false;
+    private bool _gameOver = false;
+    private bool _end = false;
     
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
@@ -27,6 +29,7 @@ public class LevelManager : MonoBehaviour
         GameManager.OnStateChange += GameOver;
         GameManager.OnStateChange += ShowPrologue;
         GameManager.OnStateChange += EndGame;
+        GameManager.OnStateChange += GoToTitle;
     }
 
     private void ChangeLevel(GameObject player)
@@ -46,22 +49,16 @@ public class LevelManager : MonoBehaviour
     private void ResetLevel(GameObject player)
     {
         player.transform.position = levels[_currentLevelIndex].spawnLocation;
-        HUDManager.Instance.UpdateLives();
+        HUDManager.Instance.UpdateBubbleCount();
     }
 
-    private void GameOver(GameState gameState)
+    private void ShowPrologue(GameState gameState)
     {
-        if (gameState == GameState.GameOverState)
+        if (gameState == GameState.PrologueState)
         {
-            HUDManager.Instance.Hide();
-            
-            // Gameover Scene
-            scenesToLoad.Add(SceneManager.LoadSceneAsync("Title"));
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelScene.name));
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
-            
-            // _currentLevelIndex = 0;
+            _prologue = true;
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Prologue"));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Title"));
         }
     }
 
@@ -69,13 +66,15 @@ public class LevelManager : MonoBehaviour
     {
         if (gameState == GameState.PlayState)
         {
+            Physics2D.gravity = new Vector2(0f, -9.81f);
+            
             _currentLevelIndex = 0;
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
             
-            if (!_readPrologue)
+            if (_prologue)
                 scenesToLoad.Add(SceneManager.UnloadSceneAsync("Prologue"));
 
             GameManager.Instance.SavedFish = 0;
@@ -83,17 +82,23 @@ public class LevelManager : MonoBehaviour
             
             HUDManager.Instance.Show();
             HUDManager.Instance.UpdateScore();
-            HUDManager.Instance.UpdateLives();
+            GameManager.Instance.LifeCounter = 3;
+            HUDManager.Instance.UpdateBubbleCount();
         }
     }
 
-    private void ShowPrologue(GameState gameState)
+    private void GameOver(GameState gameState)
     {
-        if (gameState == GameState.PrologueState)
+        if (gameState == GameState.GameOverState)
         {
-            scenesToLoad.Add(SceneManager.LoadSceneAsync("Prologue"));
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Title"));
-            _readPrologue = true;
+            _gameOver = true;
+            _prologue = false;
+            HUDManager.Instance.Hide();
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("GameOver"));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelScene.name));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
+
         }
     }
 
@@ -101,12 +106,28 @@ public class LevelManager : MonoBehaviour
     {
         if (gameState == GameState.EndingState)
         {
+            _end = true;
+            _prologue = false;
             HUDManager.Instance.Hide();
-            
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Ending"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelScene.name));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
+        }
+    }
+
+    private void GoToTitle(GameState gameState)
+    {
+        if (gameState == GameState.MenuState)
+        {
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Title"));
+            
+            if(_gameOver)
+                scenesToLoad.Add(SceneManager.UnloadSceneAsync("GameOver"));
+            else if(_end)
+                scenesToLoad.Add(SceneManager.UnloadSceneAsync("Ending"));
+
+            _prologue = false;
         }
     }
 
@@ -118,4 +139,5 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
     }
+    
 }
