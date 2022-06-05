@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     private IPlayerCommand adjustGravityRight;
     private List<Action<bool>> collection;
     private bool _isAdjusting = false;
+    private Animator _animator;
+    private BoxCollider2D _boxCollider2D;
+    [SerializeField] private LayerMask platformLayer;
+    
     public bool IsAdjusting
     {
         get => _isAdjusting;
@@ -53,6 +57,8 @@ public class PlayerController : MonoBehaviour
         this.up =  ScriptableObject.CreateInstance<MoveUp>();
         this.adjustGravityLeft = ScriptableObject.CreateInstance<AdjustGravityLeft>();
         this.adjustGravityRight = ScriptableObject.CreateInstance<AdjustGravityRight>();
+        _animator = transform.GetChild(0).GetComponent<Animator>();
+        _boxCollider2D = transform.GetChild(0).GetComponent<BoxCollider2D>();
     
         // this.collection.Add(this.adjustGravityLeft.IsAdjusting);
         // this.collection.Add(this.adjustGravityRight.IsAdjusting);
@@ -111,6 +117,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W)) 
         {
             this.up.Execute(this.gameObject);
+            _animator.SetBool("isJumping", true);
         }
 
         if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space) ) 
@@ -127,7 +134,12 @@ public class PlayerController : MonoBehaviour
         this.SetJump();
 
         // do player animation here
-
+        if (IsGrounded())
+            _animator.SetBool("isJumping", false);
+        else
+        {
+            _animator.SetBool("isJumping", true);
+        }
     }
     
 
@@ -146,5 +158,13 @@ public class PlayerController : MonoBehaviour
         {
             this.up.SetCurNumJumps(0);
         } 
+    }
+    
+    private bool IsGrounded()
+    {
+        float leeway = .01f;
+        RaycastHit2D rayHit = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f,  Vector2.down, 
+            leeway, platformLayer);
+        return rayHit.collider != null;
     }
 }
