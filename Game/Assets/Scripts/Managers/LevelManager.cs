@@ -75,10 +75,12 @@ public class LevelManager : MonoBehaviour
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
             
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Prologue"));
+
+            GameManager.Instance.SavedFish = 0;
+            GameManager.Instance.LifeCounter = 3;
             
             HUDManager.Instance.Show();
             HUDManager.Instance.UpdateScore();
-            GameManager.Instance.LifeCounter = 3;
             HUDManager.Instance.UpdateLives();
         }
     }
