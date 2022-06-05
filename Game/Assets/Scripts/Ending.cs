@@ -7,6 +7,6 @@ public class Ending : MonoBehaviour
 {
     public void JumpToGameOver()
     {
-        SceneManager.LoadSceneAsync("GameOver");
+        GameManager.Instance.UpdateState(GameState.PlayState);
     }
 }

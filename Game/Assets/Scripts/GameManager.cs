@@ -56,7 +56,9 @@ public class GameManager : MonoBehaviour
 public enum GameState
 {
     MenuState,
+    PrologueState,
     PlayState,
     DialogueState,
-    GameOverState
+    GameOverState,
+    EndingState
 }

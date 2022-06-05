@@ -24,11 +24,18 @@ public class LevelManager : MonoBehaviour
         GameManager.OnDeath += ResetLevel;
         GameManager.OnStateChange += StartGame;
         GameManager.OnStateChange += GameOver;
+        GameManager.OnStateChange += ShowPrologue;
+        GameManager.OnStateChange += EndGame;
     }
 
     private void ChangeLevel(GameObject player)
     {
         _currentLevelIndex++;
+        if (_currentLevelIndex == levels.Length)
+        {
+            GameManager.Instance.UpdateState(GameState.EndingState);
+            return;
+        }
         scenesToLoad.Add(SceneManager.LoadSceneAsync(levels[_currentLevelIndex].levelScene.name, LoadSceneMode.Additive));
         SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(levels[_currentLevelIndex].levelScene.name));
         scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelScene.name));
@@ -49,7 +56,6 @@ public class LevelManager : MonoBehaviour
             
             // Gameover Scene
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Title"));
-            
             scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelScene.name));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
@@ -68,12 +74,41 @@ public class LevelManager : MonoBehaviour
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
             
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Title"));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Prologue"));
             
             HUDManager.Instance.Show();
             HUDManager.Instance.UpdateScore();
             GameManager.Instance.LifeCounter = 3;
             HUDManager.Instance.UpdateLives();
+        }
+    }
+
+    private void ShowPrologue(GameState gameState)
+    {
+        if (gameState == GameState.PrologueState)
+        {
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Prologue"));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Title"));
+        }
+    }
+
+    private void EndGame(GameState gameState)
+    {
+        if (gameState == GameState.EndingState)
+        {
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Ending"));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelScene.name));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
+        }
+    }
+
+    // for awaiting async loading. game works as is right now however
+    private IEnumerator LoadScene(AsyncOperation sceneLoad)
+    {
+        while (!sceneLoad.isDone)
+        {
+            yield return null;
         }
     }
 }
