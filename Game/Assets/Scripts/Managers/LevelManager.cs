@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameLevel[] levels;
     private int _currentLevelIndex = 0;
+    private bool _readPrologue = false;
     
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
@@ -60,7 +61,7 @@ public class LevelManager : MonoBehaviour
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
             
-            _currentLevelIndex = 0;
+            // _currentLevelIndex = 0;
         }
     }
 
@@ -68,13 +69,14 @@ public class LevelManager : MonoBehaviour
     {
         if (gameState == GameState.PlayState)
         {
-            
+            _currentLevelIndex = 0;
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
             
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync("Prologue"));
+            if (!_readPrologue)
+                scenesToLoad.Add(SceneManager.UnloadSceneAsync("Prologue"));
 
             GameManager.Instance.SavedFish = 0;
             GameManager.Instance.LifeCounter = 3;
@@ -91,6 +93,7 @@ public class LevelManager : MonoBehaviour
         {
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Prologue"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Title"));
+            _readPrologue = true;
         }
     }
 
@@ -98,8 +101,10 @@ public class LevelManager : MonoBehaviour
     {
         if (gameState == GameState.EndingState)
         {
+            HUDManager.Instance.Hide();
+            
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Ending"));
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelScene.name));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelScene.name));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
         }

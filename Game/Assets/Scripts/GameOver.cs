@@ -7,14 +7,12 @@ public class GameOver : MonoBehaviour
 {
     public void PlayAgain()
     {
-        SceneManager.LoadSceneAsync("Gameplay");
-        //SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("Gameplay"));
+        GameManager.Instance.UpdateState(GameState.PlayState);
     }
 
     public void ExitGame()
     {
-        SceneManager.LoadSceneAsync("Title");
-
+        // SceneManager.LoadSceneAsync("Title");
     }
 
 }
