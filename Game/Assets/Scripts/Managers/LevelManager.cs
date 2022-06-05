@@ -54,7 +54,7 @@ public class LevelManager : MonoBehaviour
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
             
-            
+            _currentLevelIndex = 0;
         }
     }
 
@@ -72,6 +72,7 @@ public class LevelManager : MonoBehaviour
             
             HUDManager.Instance.Show();
             HUDManager.Instance.UpdateScore();
+            GameManager.Instance.LifeCounter = 3;
             HUDManager.Instance.UpdateLives();
         }
     }
