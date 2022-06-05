@@ -83,6 +83,13 @@ public class Player : MonoBehaviour
             GameManager.Instance.UpdateLevel(player);
             
         }
+        
+        if (col.CompareTag("fish"))
+        {
+            col.gameObject.SetActive(false);
+            GameManager.Instance.SavedFish++;
+            HUDManager.Instance.UpdateScore();
+        }
             
     }
 
