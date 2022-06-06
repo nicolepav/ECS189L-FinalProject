@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // Entry point of game
         UpdateState(GameState.MenuState);
         SavedFish = 0;
         LifeCounter = 3;
