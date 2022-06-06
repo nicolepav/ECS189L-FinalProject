@@ -53,6 +53,8 @@ public class SoundManager : MonoBehaviour
 
         // Initial music track that plays on game start up.
         this.PlayMusicTrack("Gameplay BGM");
+        
+        DontDestroyOnLoad(this);
     }
 
     // To play music track from a script, use:
