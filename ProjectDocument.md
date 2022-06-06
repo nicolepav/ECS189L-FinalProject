@@ -80,15 +80,15 @@ Assets are found in Visuals folder. Animations are found in Animations folder. A
 
 - Windows
 
-WASD movement, left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
+WAD movement (up, left, right), left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
 
 - MacOS
 
-WASD movement, left mouse & space rotate right (clockwise), right mouse & option rotate left (clockwise), q to pause, e to escape/continue dialog interactions
+WAD movement (up, left, right), left mouse & space rotate right (clockwise), right mouse & option rotate left (clockwise), q to pause, e to escape/continue dialog interactions
 
 - Web
 
-WASD movement, left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
+WAD movement (up, left, right), left mouse & space rotate right (clockwise), right mouse & alt/option rotate left (clockwise), q to pause, e to escape/continue dialog interactions
 
 
 Input was primarily implemented using the command pattern. Although it seems counter intuitive to have left mouse rotate clockwise and right counterclockwise, we did this because left mouse click is a more instinctual motion and should therefore match the conventional direction of rotation (clockwise).
