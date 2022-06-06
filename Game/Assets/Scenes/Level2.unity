@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 4820276}
   - component: {fileID: 4820275}
   - component: {fileID: 4820274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderRight
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 49099335}
   - component: {fileID: 49099334}
   - component: {fileID: 49099333}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderBottom
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 122718547}
   - component: {fileID: 122718546}
   - component: {fileID: 122718545}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderLeft
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 637182913}
   - component: {fileID: 637182912}
   - component: {fileID: 637182911}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderRight (1)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 797850675}
   - component: {fileID: 797850674}
   - component: {fileID: 797850673}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderMid
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 1201742998}
   - component: {fileID: 1201742997}
   - component: {fileID: 1201742996}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderTop
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1295,7 +1295,7 @@ GameObject:
   - component: {fileID: 1352988690}
   - component: {fileID: 1352988689}
   - component: {fileID: 1352988688}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderMid (1)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1404,7 +1404,7 @@ GameObject:
   - component: {fileID: 1677179227}
   - component: {fileID: 1677179226}
   - component: {fileID: 1677179225}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderRight (2)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1552,7 +1552,7 @@ GameObject:
   - component: {fileID: 1993789609}
   - component: {fileID: 1993789608}
   - component: {fileID: 1993789607}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BorderMid (2)
   m_TagString: wall
   m_Icon: {fileID: 0}
