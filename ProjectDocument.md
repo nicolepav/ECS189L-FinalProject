@@ -77,9 +77,12 @@ Assets are found in Visuals folder. Animations are found in Animations folder. A
 **Describe the default input configuration.**
 
 **Platforms**
--Windows
--MacOS
--Web
+
+- Windows
+
+- MacOS
+
+- Web
 
 ## Game Logic
 
