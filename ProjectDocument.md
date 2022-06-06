@@ -2,11 +2,38 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+One unfortunate day, an evil fishing net was cast over the sea, trapping and endangering all the marine life. With no other hope left, the fishes look to
+a blobfish named Blob Boi, who inherits the ancient ability of gravity manipulation to lift himself off of the sea floor. Unwilling to let the net
+conquer all that remains, Blob Boi rises to the occasion, tasked with ensuring the safe rescue of his aquatic brethren and returning peace to sea. Will
+he be able to turn the tides and save everyone? Or will life as he knows it be forever swept away by the net's destruction?
 
 ## Gameplay Explanation ##
 
-**In this section, explain how the game should be played. Treat this as a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
+This game functions as a 2D platformer that features puzzle elements centered around player movement. The core gameplay mechanic revolves around rotating 
+the camera, which changes the direction of gravity along with it. The player needs to use this mechanic to maneuver through levels and gain access to
+otherwise impossible-to-reach places.
+
+In order to win the game, the player must save all the fish. Each level contains fish placed in various locations, who can be saved by directly
+approaching them. Players can proceed on to the next level by reaching the exit portal. All fish must be saved before the player reaches the final exit
+portal in order to achieve the game's good ending.
+
+The player possesses three lives. A life is lost when the player falls outside of the level's boundaries. Game Over occurs when all lives are lost or when there are still fish remaining after reaching the final exit portal.
+
+### Controls ###
+
+*W* - Jump
+
+*A* - Move Left
+
+*D* - Move Right
+
+*E* - Proceed with Dialogue
+
+*Q* - Pause Game
+
+*Left Click* - Rotate Camera/Gravity Clockwise
+
+*Right Click* - Rotate Camera/Gravity Counter Clockwise
 
 
 **If you did work that should be factored in to your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
