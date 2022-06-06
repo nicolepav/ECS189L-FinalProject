@@ -29,15 +29,15 @@ The player possesses three lives. A life is lost when the player falls outside o
 
 *E* - Proceed with Dialogue
 
-*Q* - Pause Game
+*Esc* - Pause Game
 
-*Left Click* - Rotate Camera/Gravity Clockwise
+*Left Click* - Rotate Camera/Gravity Counter Clockwise
 
-*Right Click* - Rotate Camera/Gravity Counter Clockwise
+*Right Click* - Rotate Camera/Gravity Clockwise
 
-*Space* - Rotate Camera/Gravity Clockwise
+*Space* - Rotate Camera/Gravity
 
-*Alt* - Rotate Camera/Gravity Counter Clockwise
+*Alt* - Rotate Camera/Gravity
 
 **If you did work that should be factored in to your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
 
@@ -54,9 +54,24 @@ Here is an example:
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
+## Producer ##
+
+For the Producer role, I took on a variety of tasks to get everyone started on their work and to provide structure to the team's workflow.
+- Provided core game mechanics to choose 
+- Created plan documents. [Example 1](https://docs.google.com/document/d/1L_-KapFFqVLW7nH1vKymIR69Zfj9aqQ6Q5n8fLTV3gM/edit?usp=sharing). [Example 2](https://docs.google.com/document/d/1x3OArdw_3qsi2HWnK5gOct_I8iMRDlUz_z-KU1Y-wR8/edit?usp=sharing).
+- Scheduled goal deadlines and synchronous 1-hour discord meetings; assigned tasks to team members.
+- Provided ideas and suggestions over several aspects throughout the development of the game.
+
+In addition, I conducted 5 playtest sessions (Sally, Aelin, Keejay, Sep, Vince).
+
 ## User Interface
 
 **Describe your user interface and how it relates to gameplay. This can be done via the template.**
+
+I implemented various user interface elements as part of our game to communicate various information to the player. I implemented a title scene, which is the starting point of the game. The title scene has a start button that the player clicks on to play the game. The start button leads to the prologue scene, which tells the story behind our game to the player. Upon pressing enter, the game officially starts, entering the gameplay scene. In the actual game, I implemented a key map to communicate to the player what happens when certain keys are pressed. The player has 3 lives, and the number of lives that the player has left is shown by how many bubbles are displayed. I implemented the functionality so that one bubble disappears every time a life is lost. In the top right, the number of fish successfully saved is displayed with a counter. Pressing the escape button can pause as well as unpause the game. I also implemented an ending scene which tells the player the ending story(other group members then modified this to communicate whether the player won or lost) that leads to an option to play again. 
+
+To communicate that a fish has been successfully saved or that the player is entering a new level, our group member with the audio subrole implemented sound effects.
+
 
 ## Movement/Physics
 
@@ -72,14 +87,27 @@ The whole game is tied together through the consistent and cohesive use of art s
 
 Assets are found in Visuals folder. Animations are found in Animations folder. All assets are created by Julia Ma.
 
-##Input
+## Input
 
 **Describe the default input configuration.**
 
 **Platforms**
--Windows
--MacOS
--Web
+
+- Windows
+
+WAD movement (up, left, right), left mouse & space rotate left (counter clockwise), right mouse & alt rotate right (clockwise clockwise), q to pause, e to escape/continue dialog interactions
+
+- MacOS
+
+WAD movement (up, left, right), left mouse & space rotate left (counter clockwise), right mouse & option rotate right (clockwise clockwise), q to pause, e to escape/continue dialog interactions
+
+- Web
+
+WAD movement (up, left, right), left mouse & space rotate left (counter clockwise), right mouse & alt/option rotate right (clockwise clockwise), q to pause, e to escape/continue dialog interactions
+
+
+Input was primarily implemented using the command pattern. There is no down movement key because the grvity mechanic is used to move you downwards
+
 
 ## Game Logic
 
@@ -131,8 +159,11 @@ wet, watery sounds like bubbles and splashing to complement the underwater theme
 ## Gameplay Testing
 
 **Add a link to the full results of your gameplay tests.**
+https://drive.google.com/drive/u/2/folders/1PKW2UUPsZdSID_VtXMKINGNhd-wrms3w 
 
 **Summarize the key findings from your gameplay tests.**
+
+Mainly we found that the testers were impressed by the graphics/feel, but this took some getting used to for some. We noticed specifically that some testers needed to get used to the timing for when they rotate the gravity so that they don't miss the fish they intend to save. Some testers got really invested and truly wanted to save as many fish as possible. The testers mainly easily understood what their goal was and how to accomplish that. In a few cases, since the testing took place during finals week, many testers had final exams to study for and their answers may not have been as thoughtful, but they were still impressed with our game. Some testers gave very specific feedback about their experience such as including how many fish left in the level. 
 
 ## Narrative Design
 
@@ -143,9 +174,20 @@ As the levels advance, shapes the maps helped the narrative too. It provided the
 ## Press Kit and Trailer
 
 **Include links to your presskit materials and trailer.**
+Project README.md includes brief press overview, including links to trailer and flyer/press release. README also contains most of the screenshots.
+
+[Press Flyer](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/Press%20Kit.pdf) 
+
+[Trailer/Demo](https://youtu.be/wfalc53Injc)
+
+[Project README (overview)](https://github.com/nicolepav/ECS189L-FinalProject#readme)
+
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
+To showcase the work, I started by creating a press release flyer. I wanted to combine the original art that Julia had made with more of a poster style, and also because it was easier to implement as a PDF than as a website. The flyer features the key pieces of a press release- story, screenshots, reviews, dev team, link to trailer, and overview of features. I was incredibly happy with how it came out and feel like it ties into the game scheme/theme flawlessly.
+
+For the trailer, I created a dramaticized intro that transitioned into gameplay footage. The dramatic intro helps to convey the story behind the game, and if we had been able to implement cut scenes, the trailer is what I imagined they would be like. To choose footage, I first played through the entire game and then tried to sample footage from different levels using jump cuts. This was to provide a good sample of what the game is like without completely spoiling what each level was like, and still demonstrate key features like the gravity rotation, fish collection, narrative dialog, and puzzle solving. Screenshots (featured in project readme) were chosen similarly to higlight the individual level themes, art, and features.
 
 
 ## Game Feel
