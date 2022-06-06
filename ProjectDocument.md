@@ -72,19 +72,22 @@ The whole game is tied together through the consistent and cohesive use of art s
 
 Assets are found in Visuals folder. Animations are found in Animations folder. All assets are created by Julia Ma.
 
-##Input
+## Input
 
 **Describe the default input configuration.**
 
 **Platforms**
 
 - Windows
+
 WASD movement, left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
 
 - MacOS
+
 WASD movement, left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
 
 - Web
+
 WASD movement, left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
 
 
