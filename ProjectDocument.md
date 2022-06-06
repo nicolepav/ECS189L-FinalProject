@@ -31,9 +31,9 @@ The player possesses three lives. A life is lost when the player falls outside o
 
 *Esc* - Pause Game
 
-*Left Click* - Rotate Camera/Gravity Clockwise
+*Left Click* - Rotate Camera/Gravity Counter Clockwise
 
-*Right Click* - Rotate Camera/Gravity Counter Clockwise
+*Right Click* - Rotate Camera/Gravity Clockwise
 
 *Space* - Rotate Camera/Gravity
 
@@ -95,18 +95,18 @@ Assets are found in Visuals folder. Animations are found in Animations folder. A
 
 - Windows
 
-WAD movement (up, left, right), left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
+WAD movement (up, left, right), left mouse & space rotate left (counter clockwise), right mouse & alt rotate right (clockwise clockwise), q to pause, e to escape/continue dialog interactions
 
 - MacOS
 
-WAD movement (up, left, right), left mouse & space rotate right (clockwise), right mouse & option rotate left (clockwise), q to pause, e to escape/continue dialog interactions
+WAD movement (up, left, right), left mouse & space rotate left (counter clockwise), right mouse & option rotate right (clockwise clockwise), q to pause, e to escape/continue dialog interactions
 
 - Web
 
-WAD movement (up, left, right), left mouse & space rotate right (clockwise), right mouse & alt/option rotate left (clockwise), q to pause, e to escape/continue dialog interactions
+WAD movement (up, left, right), left mouse & space rotate left (counter clockwise), right mouse & alt/option rotate right (clockwise clockwise), q to pause, e to escape/continue dialog interactions
 
 
-Input was primarily implemented using the command pattern. Although it seems counter intuitive to have left mouse rotate clockwise and right counterclockwise, we did this because left mouse click is a more instinctual motion and should therefore match the conventional direction of rotation (clockwise).
+Input was primarily implemented using the command pattern. There is no down movement key because the grvity mechanic is used to move you downwards
 
 
 ## Game Logic
