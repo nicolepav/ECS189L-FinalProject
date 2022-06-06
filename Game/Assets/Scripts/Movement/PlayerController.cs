@@ -74,8 +74,7 @@ public class PlayerController : MonoBehaviour
                                             new Vector2(this.DeltaGravity.y, 0)};  // left
     
         Physics2D.gravity = this.GravityDirs[this.GravityIndex];
-        Debug.Log("gravity on start: " + Physics2D.gravity);
-    
+
     }
 
     // gets correct negative and positive modulus of two numbers
@@ -181,9 +180,7 @@ public class PlayerController : MonoBehaviour
                 boxDirection = Vector2.left;
                 break;
         }
-
-        Debug.Log(_gravityIndex);
-        Debug.Log(boxDirection);
+        
         var leeway = .02f;
         RaycastHit2D rayHit = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f,  boxDirection, 
             leeway, platformLayer);

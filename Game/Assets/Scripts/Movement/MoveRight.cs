@@ -15,7 +15,7 @@ namespace PlayerCommand
 
         public void Execute(GameObject gameObject) 
         {
-            Debug.Log("Left command executed");
+            // Debug.Log("Left command executed");
             var rigidBody = gameObject.GetComponent<Rigidbody2D>();
             this.yDir = Math.Sign(Physics2D.gravity[1]);
             this.xDir = Math.Sign(Physics2D.gravity[0]);
@@ -24,7 +24,6 @@ namespace PlayerCommand
 
             if (rigidBody != null)
             {
-                Debug.Log("X " + this.xDir + " Y " + this.yDir);
                 if (this.xDir != 0) // gravity going right/left
                 {
                     dy =  this.xDir * speed;

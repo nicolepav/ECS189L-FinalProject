@@ -41,9 +41,10 @@ public class LevelManager : MonoBehaviour
             GameManager.Instance.UpdateState(GameState.EndingState);
             return;
         }
-        scenesToLoad.Add(SceneManager.LoadSceneAsync(levels[_currentLevelIndex].levelScene.name, LoadSceneMode.Additive));
-        SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(levels[_currentLevelIndex].levelScene.name));
-        scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelScene.name));
+        
+        scenesToLoad.Add(SceneManager.LoadSceneAsync(levels[_currentLevelIndex].levelIndex, LoadSceneMode.Additive));
+        SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(levels[_currentLevelIndex].levelName));
+        scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelIndex));
         player.transform.position = levels[_currentLevelIndex].spawnLocation;
         FindObjectOfType<SoundManager>().PlaySoundEffect("Teleport");
     }
@@ -102,7 +103,7 @@ public class LevelManager : MonoBehaviour
             HUDManager.Instance.Hide();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("GameOver"));
             FindObjectOfType<SoundManager>().PlayMusicTrack("Game Over");
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelScene.name));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelIndex));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
 
@@ -117,7 +118,7 @@ public class LevelManager : MonoBehaviour
             _prologue = false;
             HUDManager.Instance.Hide();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Ending"));
-            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelScene.name));
+            scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelIndex));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
             FindObjectOfType<SoundManager>().PlayMusicTrack("Ending");

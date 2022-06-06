@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
         
         this.degreesPerSecond = 90 / this.totalRotationTime;
         // this.degreesPerSecond = Mathf.Lerp(0f, 90f, this.totalRotationTime);
-        Debug.Log("degreesPerSecond: " + degreesPerSecond);
+        // Debug.Log("degreesPerSecond: " + degreesPerSecond);
     }
     
     // Update is called once per frame
@@ -56,12 +56,12 @@ public class CameraController : MonoBehaviour
                     // rotate player graphic to speed of camera
                     target.GetComponent<Player>().transform.GetChild(0).transform.Rotate(rotVec);
                     this.degRotated += degs;
-                    Debug.Log("degRotated: " + degRotated);
+                    // Debug.Log("degRotated: " + degRotated);
 
                 }
                 else
                 {
-                    Debug.Log("Done rotating");
+                    // Debug.Log("Done rotating");
                     this.isRotating = false;
 
                     //can adjust
@@ -83,7 +83,7 @@ public class CameraController : MonoBehaviour
         // transform.Rotate(0,0,-90);
         if (!this.isRotating)
         {
-            Debug.Log("Can rotate");
+            // Debug.Log("Can rotate");
             this.isRotating = true;
             this.rotationDirection = dir;
             this.degRotated = 0.0f;

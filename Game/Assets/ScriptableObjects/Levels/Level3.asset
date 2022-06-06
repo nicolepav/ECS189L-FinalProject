@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6305388931eaae9429e3576c9dd38207, type: 3}
   m_Name: Level3
   m_EditorClassIdentifier: 
-  levelIndex: 2
-  levelName: Level 3
+  levelIndex: 3
+  levelName: Level3
   levelDescription: Third Level
   levelScene: {fileID: 102900000, guid: 124931f7707466643b776fe3a822824f, type: 3}
   spawnLocation: {x: 5, y: -3}
