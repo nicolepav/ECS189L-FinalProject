@@ -162,9 +162,33 @@ public class PlayerController : MonoBehaviour
     
     private bool IsGrounded()
     {
-        float leeway = .01f;
-        RaycastHit2D rayHit = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f,  Vector2.down, 
+        var boxDirection = Vector2.down;
+        switch (_gravityIndex)
+        {
+            case (0):
+                boxDirection = Vector2.down;
+                break;
+            case (1):
+                boxDirection = Vector2.right;
+                break;
+            case (2):
+                boxDirection = Vector2.up;
+                break;
+            case (3):
+                boxDirection = Vector2.left;
+                break;
+        }
+
+        Debug.Log(_gravityIndex);
+        Debug.Log(boxDirection);
+        var leeway = .02f;
+        RaycastHit2D rayHit = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f,  boxDirection, 
             leeway, platformLayer);
+        Color rayColor;
+        if(rayHit.collider != null)
+            rayColor = Color.green;
+        else
+            rayColor = Color.red;
         return rayHit.collider != null;
     }
 }
