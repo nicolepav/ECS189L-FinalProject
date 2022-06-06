@@ -149,8 +149,11 @@ wet, watery sounds like bubbles and splashing to complement the underwater theme
 ## Gameplay Testing
 
 **Add a link to the full results of your gameplay tests.**
+https://drive.google.com/drive/u/2/folders/1PKW2UUPsZdSID_VtXMKINGNhd-wrms3w 
 
 **Summarize the key findings from your gameplay tests.**
+
+Mainly we found that the testers were impressed by the graphics/feel, but this took some getting used to for some. Some testers got really invested and truly wanted to save as many fish as possible. The testers mainly easily understood what their goal was and how to accomplish that. 
 
 ## Narrative Design
 
