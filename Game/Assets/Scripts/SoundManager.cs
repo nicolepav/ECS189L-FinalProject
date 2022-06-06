@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
         }
 
         // Initial music track that plays on game start up.
-        this.PlayMusicTrack("Gameplay BGM");
+        this.PlayMusicTrack("Title");
         
         DontDestroyOnLoad(this);
     }
@@ -76,6 +76,8 @@ public class SoundManager : MonoBehaviour
         }   
 
         this.trackPlaying = track;
+
+        Debug.Log("now playing " + title);
     }
 
     // To play sound effect from a script, use:
@@ -91,6 +93,8 @@ public class SoundManager : MonoBehaviour
         }
 
         track.audioSource.Play();
+
+        Debug.Log("sound effect! " + title);
     }
 
     public void StopSoundEffect(string title)

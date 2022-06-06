@@ -57,6 +57,9 @@ namespace PlayerCommand
                 // increment jump counter
                 this.curNumJumps++;
                 rigidBody.velocity = new Vector2(dx, dy);
+
+                // Jump sound effect.
+                FindObjectOfType<SoundManager>().PlaySoundEffect("Jump");
             }
         }
     }
