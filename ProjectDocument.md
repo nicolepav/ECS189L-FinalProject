@@ -56,10 +56,7 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## User Interface
 
-I implemented various user interface elements as part of our game to communicate various information to the player. I implemented a title scene, which is the starting point of the game. The title scene has a start button that the player clicks on to play the game. The start button leads to the prologue scene, which tells the story behind our game to the player. Upon pressing enter, the game officially starts, entering the gameplay scene. In the actual game, I implemented a key map to communicate to the player what happens when certain keys are pressed. The player has 3 lives, and the number of lives that the player has left is shown by how many bubbles are displayed. I implemented the functionality so that one bubble disappears every time a life is lost. In the top right, the number of fish successfully saved is displayed with a counter. Pressing the escape button can pause as well as unpause the game. I also implemented an ending scene which tells the player the ending story(other group members then modified this to communicate whether the player won or lost) that leads to an option to play again. 
-
-To communicate that a fish has been successfully saved or that the player is entering a new level, our group member with the audio subrole implemented sound effects.
-
+**Describe your user interface and how it relates to gameplay. This can be done via the template.**
 
 ## Movement/Physics
 
@@ -82,10 +79,17 @@ Assets are found in Visuals folder. Animations are found in Animations folder. A
 **Platforms**
 
 - Windows
+WASD movement, left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
 
 - MacOS
+WASD movement, left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
 
 - Web
+WASD movement, left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
+
+
+Input was primarily implemented using the command pattern. Although it seems counter intuitive to have left mouse rotate clockwise and right counterclockwise, we did this because left mouse click is a more instinctual motion and should therefore match the conventional direction of rotation (clockwise).
+
 
 ## Game Logic
 
@@ -149,9 +153,20 @@ As the levels advance, shapes the maps helped the narrative too. It provided the
 ## Press Kit and Trailer
 
 **Include links to your presskit materials and trailer.**
+Project README.md includes brief press overview, including links to trailer and flyer/press release. README also contains most of the screenshots.
+
+[Press Flyer](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/Press%20Kit.pdf) 
+
+[Trailer/Demo](https://youtu.be/wfalc53Injc)
+
+[Project README (overview)](https://github.com/nicolepav/ECS189L-FinalProject#readme)
+
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
+To showcase the work, I started by creating a press release flyer. I wanted to combine the original art that Julia had made with more of a poster style, and also because it was easier to implement as a PDF than as a website. The flyer features the key pieces of a press release- story, screenshots, reviews, dev team, link to trailer, and overview of features. I was incredibly happy with how it came out and feel like it ties into the game scheme/theme flawlessly.
+
+For the trailer, I created a dramaticized intro that transitioned into gameplay footage. The dramatic intro helps to convey the story behind the game, and if we had been able to implement cut scenes, the trailer is what I imagined they would be like. To choose footage, I first played through the entire game and then tried to sample footage from different levels using jump cuts. This was to provide a good sample of what the game is like without completely spoiling what each level was like, and still demonstrate key features like the gravity rotation, fish collection, narrative dialog, and puzzle solving. Screenshots (featured in project readme) were chosen similarly to higlight the individual level themes, art, and features.
 
 
 ## Game Feel
