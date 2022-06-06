@@ -172,7 +172,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: decb052ba64a24c309f2aff5c9ad2d68, type: 3}
     audioSource: {fileID: 0}
     title: Gameplay BGM
-    volume: 0.2
+    volume: 0.15
     pitch: 1
     loop: 1
   - clip: {fileID: 8300000, guid: 98d33a8fe597042dd98b997eb2a948f5, type: 3}
@@ -198,7 +198,7 @@ MonoBehaviour:
     audioSource: {fileID: 0}
     title: Jump
     volume: 1
-    pitch: 1
+    pitch: 1.5
     loop: 0
   - clip: {fileID: 8300000, guid: 555fd742e1b434a5b91ad9c9888438f1, type: 3}
     audioSource: {fileID: 0}
@@ -227,6 +227,12 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 55d5191e83b92437b9115b64b933dfb8, type: 3}
     audioSource: {fileID: 0}
     title: Death
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: 8e95b69b41fa04cba9e2c8235e8bf2bb, type: 3}
+    audioSource: {fileID: 0}
+    title: Land
     volume: 1
     pitch: 1
     loop: 0

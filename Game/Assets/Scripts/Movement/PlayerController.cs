@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private bool _isAdjusting = false;
     private Animator _animator;
     private BoxCollider2D _boxCollider2D;
+    private bool inAir = false;
     [SerializeField] private LayerMask platformLayer;
     
     public bool IsAdjusting
@@ -135,10 +136,18 @@ public class PlayerController : MonoBehaviour
 
         // do player animation here
         if (IsGrounded())
+        {
             _animator.SetBool("isJumping", false);
+            if (this.inAir)
+            {
+                FindObjectOfType<SoundManager>().PlaySoundEffect("Land");
+                this.inAir = false;
+            }
+        }
         else
         {
             _animator.SetBool("isJumping", true);
+            this.inAir = true;
         }
     }
     
