@@ -73,11 +73,15 @@ Assets are found in Visuals folder. Animations are found in Animations folder. A
 
 **Describe the default input configuration.**
 
-**Add an entry for each platform or input style your project supports.**
+**Platforms**
+-Windows
+-MacOS
+-Web
 
 ## Game Logic
 
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
+The game makes use of 5 different states that the player cycles through as they play the game. The player goes from the Menu->Prologue->Play->Ending, along with a gameover state that can occur during play, which restarts player. The game makes use of the [obeserver](https://github.com/nicolepav/ECS189L-FinalProject/blob/69400a1e0c1ff435885a2ef8e4d733ba2bd0d16f/Game/Assets/Scripts/Managers/LevelManager.cs#L29-L35), [singleton](https://github.com/nicolepav/ECS189L-FinalProject/blob/69400a1e0c1ff435885a2ef8e4d733ba2bd0d16f/Game/Assets/Scripts/Managers/GameManager.cs#L8), [command](https://github.com/nicolepav/ECS189L-FinalProject/blob/69400a1e0c1ff435885a2ef8e4d733ba2bd0d16f/Game/Assets/Scripts/Movement/PlayerController.cs#L130), and [state](https://github.com/nicolepav/ECS189L-FinalProject/blob/69400a1e0c1ff435885a2ef8e4d733ba2bd0d16f/Game/Assets/Scripts/Managers/GameManager.cs#L32-L36) patterns to facilitate gameplay and development. Data about the player's lives and score is recorded and tracked using events in the Game Manager passes it on to other scripts. Dialogue was also implmented allowing the player to recieve messages from NPCs in the game. The Dialgoue makes use of the LeanTween library from the asset store to provide ease in & out animations for the UI.
 
 # Sub-Roles
 
