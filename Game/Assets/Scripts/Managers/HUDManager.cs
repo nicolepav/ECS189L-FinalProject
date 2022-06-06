@@ -68,4 +68,10 @@ public class HUDManager : MonoBehaviour
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
     }
+    
+    public void ExitGame()
+    {
+        GameManager.Instance.UpdateState(GameState.MenuState);
+        Pause.Instance.ResumeGame();
+    }
 }

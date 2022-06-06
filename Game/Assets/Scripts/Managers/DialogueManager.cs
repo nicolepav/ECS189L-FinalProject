@@ -71,6 +71,11 @@ public class DialogueManager : MonoBehaviour
     {
         backgroundBox.transform.localScale = Vector3.zero;
     }
+
+    public void CloseBox()
+    {
+        backgroundBox.LeanScale(Vector3.zero, CloseTime).setEaseInOutExpo();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

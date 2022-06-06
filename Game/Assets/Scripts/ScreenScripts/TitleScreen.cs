@@ -7,4 +7,9 @@ public class TitleScreen : MonoBehaviour
         SoundManager.Instance.PlaySoundEffect("Menu Select");
         GameManager.Instance.UpdateState(GameState.PrologueState);
     }
+    
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

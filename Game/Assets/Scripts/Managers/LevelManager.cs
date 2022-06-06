@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
     private bool _prologue = false;
     private bool _gameOver = false;
     private bool _end = false;
+    // Minimum number of fished needed to be saved to win.
+    private const int MinimumFish = 30;
     
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
@@ -38,7 +40,13 @@ public class LevelManager : MonoBehaviour
         _currentLevelIndex++;
         if (_currentLevelIndex == levels.Length)
         {
-            GameManager.Instance.UpdateState(GameState.EndingState);
+            if (GameManager.Instance.SavedFish >= MinimumFish)
+                GameManager.Instance.UpdateState(GameState.EndingState);
+            else
+            {
+                GameManager.Instance.UpdateState(GameState.GameOverState);
+                _currentLevelIndex--;
+            }
             return;
         }
         
@@ -72,7 +80,7 @@ public class LevelManager : MonoBehaviour
         if (gameState == GameState.PlayState)
         {
             Physics2D.gravity = new Vector2(0f, -9.81f);
-            
+
             _currentLevelIndex = 0;
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
@@ -136,7 +144,15 @@ public class LevelManager : MonoBehaviour
                 scenesToLoad.Add(SceneManager.UnloadSceneAsync("GameOver"));
             else if(_end)
                 scenesToLoad.Add(SceneManager.UnloadSceneAsync("Ending"));
-
+            else if (GameManager.Instance.Paused)
+            {
+                HUDManager.Instance.Hide();
+                scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelIndex));
+                scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
+                scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
+                GameManager.Instance.Paused = false;
+            }
+            DialogueManager.Instance.CloseBox();
             _prologue = false;
         }
     }

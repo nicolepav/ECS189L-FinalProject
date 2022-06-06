@@ -2,11 +2,38 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+One unfortunate day, an evil fishing net was cast over the sea, trapping and endangering all the marine life. With no other hope left, the fishes look to
+a blobfish named Blob Boi, who inherits the ancient ability of gravity manipulation to lift himself off of the sea floor. Unwilling to let the net
+conquer all that remains, Blob Boi rises to the occasion, tasked with ensuring the safe rescue of his aquatic brethren and returning peace to sea. Will
+he be able to turn the tides and save everyone? Or will life as he knows it be forever swept away by the net's destruction?
 
 ## Gameplay Explanation ##
 
-**In this section, explain how the game should be played. Treat this as a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
+This game functions as a 2D platformer that features puzzle elements centered around player movement. The core gameplay mechanic revolves around rotating 
+the camera, which changes the direction of gravity along with it. The player needs to use this mechanic to maneuver through levels and gain access to
+otherwise impossible-to-reach places.
+
+In order to win the game, the player must save all the fish. Each level contains fish placed in various locations, who can be saved by directly
+approaching them. Players can proceed on to the next level by reaching the exit portal. All fish must be saved before the player reaches the final exit
+portal in order to achieve the game's good ending.
+
+The player possesses three lives. A life is lost when the player falls outside of the level's boundaries. Game Over occurs when all lives are lost or when there are still fish remaining after reaching the final exit portal.
+
+### Controls ###
+
+*W* - Jump
+
+*A* - Move Left
+
+*D* - Move Right
+
+*E* - Proceed with Dialogue
+
+*Q* - Pause Game
+
+*Left Click* - Rotate Camera/Gravity Clockwise
+
+*Right Click* - Rotate Camera/Gravity Counter Clockwise
 
 
 **If you did work that should be factored in to your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
@@ -52,11 +79,44 @@ The premise of this game is that the blobfish can move around in 4 directions of
 
 ## Audio
 
-**List your assets including their sources and licenses.**
+Below are the attributions/licenses of the sound assets used in the game. This same information can also be found a README.md file found inside of the
+folder containing the sound assets.
 
-**Describe the implementation of your audio system.**
+"269583__deleted-user-3854053__bubble.wav" from [Bubble](https://freesound.org/people/deleted_user_3854053/sounds/269583/) by deleted-user-3854053 licensed under [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**Document the sound style.** 
+"341250__jeremysykes__select01.wav" from [8Bit Video Games](https://freesound.org/people/jeremysykes/sounds/341250/) by jeremysykes licensed under [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+"398708__inspectorj__water-swirl-small-17.wav" from [Water Swirl, Small](https://freesound.org/people/InspectorJ/sounds/398708/) by InspectorJ licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+"485065__javierserrat__bubble.wav" from [Bubble](https://freesound.org/people/JavierSerrat/sounds/485065/) by JavierSerrat licensed under [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+"530617__lukeo135__slime.ogg" from [Slime](https://freesound.org/people/Lukeo135/sounds/530617/) by Lukeo135 licensed under [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+"530776__rickplayer__select.mp3" from [Select](https://freesound.org/people/Rickplayer/sounds/530776/) by Rickplayer licensed under [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+"Death Sound 4.mp3" from [GameBoy SFX Pack #1](https://omegaosg.itch.io/gameboy-sfx-pack) by OmegaPixelArt
+
+"Low Thud.mp3" from [GameBoy SFX Pack #1](https://omegaosg.itch.io/gameboy-sfx-pack) by OmegaPixelArt
+
+"Ludum Dare 32 - Track 2.wav" from [FREE Music Loop Bundle](https://tallbeard.itch.io/music-loop-bundle) by [Abstraction](http://www.abstractionmusic.com/)
+
+"Ludum Dare 32 - Track 5.wav" from [FREE Music Loop Bundle](https://tallbeard.itch.io/music-loop-bundle) by [Abstraction](http://www.abstractionmusic.com/)
+
+"Ludum Dare 38 - Track 2.wav" from [FREE Music Loop Bundle](https://tallbeard.itch.io/music-loop-bundle) by [Abstraction](http://www.abstractionmusic.com/)
+
+"Somewhere at Sea.wav" from [Space Music Pack](https://gooseninja.itch.io/space-music-pack) by Goose Ninja
+
+"Underwater Shoot.wav" from [GameBoy SFX Pack #1](https://omegaosg.itch.io/gameboy-sfx-pack) by OmegaPixelArt
+
+The audio system was implemented in a similar manner to the audio systems found in each of the exercises for ECS 189L, having a [SoundManager script](https://github.com/nicolepav/ECS189L-FinalProject/blob/34a7d17a452b0afa679bf9e6719cbbc881b22ce9/Game/Assets/Scripts/Managers/SoundManager.cs)
+handle the playback of each music track and sound effect added as a [Sound Clip](https://github.com/nicolepav/ECS189L-FinalProject/blob/34a7d17a452b0afa679bf9e6719cbbc881b22ce9/Game/Assets/Scripts/SoundClip.cs).
+Brackey's [Intro to AUDIO in Unity](https://www.youtube.co/watch?v=6OT43pvUyfY) was used as a reference for this implementation. In addition, the
+SoundManager script was made to be a static instance that can be called directly from other scripts, instead of having to find the SoundManager object
+each time a sound needed to be played.
+
+The desired sound style for this game is a retro 8-bit/16-bit aesthetic, in order to align with the pixel art of the game's visuals. I used music tracks
+and sound effects that either directly mirrored this sound style or were reminiscent of it while using more modern sound production. In addition, I used
+wet, watery sounds like bubbles and splashing to complement the underwater theme of the game.
 
 ## Gameplay Testing
 

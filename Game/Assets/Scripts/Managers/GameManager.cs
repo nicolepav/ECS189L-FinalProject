@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameState State;
     public int SavedFish { get; set; }
     public int LifeCounter { get; set; }
+    public bool Paused { get; set; }
 
     void Awake()
     {
@@ -21,9 +22,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // Entry point of game
         UpdateState(GameState.MenuState);
         SavedFish = 0;
         LifeCounter = 3;
+        Paused = false;
     }
     
     public void UpdateState(GameState newState)
