@@ -223,8 +223,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.011, y: 18}
-  m_SizeDelta: {x: 974.0692, y: 438.4856}
+  m_AnchoredPosition: {x: 0.000015259, y: 18.003}
+  m_SizeDelta: {x: 1129.2816, y: 438.4856}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &31489696
 MonoBehaviour:
@@ -248,7 +248,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1602689d71c6e4f32bb9df7bd861733f, type: 3}
-    m_FontSize: 28
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -260,10 +260,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
   m_Text: Deep in the ocean, Blob Boi's life is overturned after barely escaping
-    a fishing net. Exhausted, he falls asleep, but awakes surrounded by other sea
-    animals that continue to be hunted by the evil net. Unwilling to let the net
-    win, he learns the ancient Blobfish art of gravity manipulation, and begins a
-    quest to save his fellow sea life before its too late.
+    a fishing net. Others continue to be hunted by the evil net. Unwilling to let
+    the net win, he learns the ancient Blobfish art of gravity manipulation, and
+    begins a quest to save his fellow sea life before its too late.
 --- !u!222 &31489697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -409,7 +408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517, y: -216.24}
+  m_AnchoredPosition: {x: -0.000030517, y: -193}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979292609
