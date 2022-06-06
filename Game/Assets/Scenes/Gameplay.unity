@@ -1207,14 +1207,14 @@ MonoBehaviour:
     Right
     Click - Rotate Right
 
-    Space - Rotates
+    Space - Rotate Left
 
-    Alt - Rotates
+    Alt - Rotate Right
 
-    E - Close Dialog
+    E
+    - Close Dialog
 
-    Esc
-    - Pause/Unpause Game
+    Esc - Pause/Unpause Game
 
 '
 --- !u!222 &1277610622
