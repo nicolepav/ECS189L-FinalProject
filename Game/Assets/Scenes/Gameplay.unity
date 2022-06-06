@@ -639,8 +639,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -96}
-  m_SizeDelta: {x: 194.691, y: 50}
+  m_AnchoredPosition: {x: 1520, y: -28}
+  m_SizeDelta: {x: 83, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1014106982
 MonoBehaviour:
@@ -675,7 +675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SCORE
+  m_Text: x
 --- !u!222 &1014106983
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1103,10 +1103,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 1584920165}
-  scoreText: {fileID: 0}
-  livesBubble1: {fileID: 0}
-  livesBubble2: {fileID: 0}
-  livesBubble3: {fileID: 0}
+  scoreText: {fileID: 1014106982}
+  livesBubble1: {fileID: 833410081}
+  livesBubble2: {fileID: 587576506}
+  livesBubble3: {fileID: 1526113908}
 --- !u!225 &1584920165
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1233,7 +1233,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HEALTH
+  m_Text: LIVES
 --- !u!222 &1737514737
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1258,7 +1258,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -25}
+  m_AnchoredPosition: {x: 20, y: -33}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1941587562
@@ -1296,7 +1296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -332.83, y: 248.57}
+  m_AnchoredPosition: {x: -501, y: 416}
   m_SizeDelta: {x: 185.9552, y: 93.853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2021768614
@@ -1333,7 +1333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 546, y: 422}
+  m_AnchoredPosition: {x: 681, y: 421}
   m_SizeDelta: {x: 166.2037, y: 101.2872}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021768616
