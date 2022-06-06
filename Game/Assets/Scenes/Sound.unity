@@ -172,13 +172,61 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: decb052ba64a24c309f2aff5c9ad2d68, type: 3}
     audioSource: {fileID: 0}
     title: Gameplay BGM
+    volume: 0.2
+    pitch: 1
+    loop: 1
+  - clip: {fileID: 8300000, guid: 98d33a8fe597042dd98b997eb2a948f5, type: 3}
+    audioSource: {fileID: 0}
+    title: Title
+    volume: 0.3
+    pitch: 1
+    loop: 1
+  - clip: {fileID: 8300000, guid: abeb3fbe9c8f84395b84233b01822f83, type: 3}
+    audioSource: {fileID: 0}
+    title: Ending
+    volume: 0.3
+    pitch: 1
+    loop: 1
+  - clip: {fileID: 8300000, guid: 838adeb09dc3a4bacaac3be08be56e88, type: 3}
+    audioSource: {fileID: 0}
+    title: Game Over
     volume: 0.3
     pitch: 1
     loop: 1
   sfxClips:
   - clip: {fileID: 8300000, guid: 8e95b69b41fa04cba9e2c8235e8bf2bb, type: 3}
     audioSource: {fileID: 0}
-    title: Squish
+    title: Jump
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: 555fd742e1b434a5b91ad9c9888438f1, type: 3}
+    audioSource: {fileID: 0}
+    title: Menu Select
+    volume: 0.3
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: f338823e0190d40ac97ccc3b94ece455, type: 3}
+    audioSource: {fileID: 0}
+    title: Save Fish
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: 9ffb4978eada04288a6329a2073dc128, type: 3}
+    audioSource: {fileID: 0}
+    title: Teleport
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: afb542a00512346bc94c7d466363312f, type: 3}
+    audioSource: {fileID: 0}
+    title: Rotation
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: 55d5191e83b92437b9115b64b933dfb8, type: 3}
+    audioSource: {fileID: 0}
+    title: Death
     volume: 1
     pitch: 1
     loop: 0

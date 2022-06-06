@@ -2,7 +2,7 @@ using UnityEngine.Audio;
 using UnityEngine;
 
 /*
- * Based on SoundManager code from ECS 189L Exercises.
+ * Based on SoundClip code from ECS 189L Exercises.
  *
  * Adapted from "Indroduction to AUDIO in Unity" by Brackeys:
  * https://www.youtube.com/watch?v=6OT43pvUyfY
