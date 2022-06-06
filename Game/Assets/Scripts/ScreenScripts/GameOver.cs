@@ -7,13 +7,13 @@ public class GameOver : MonoBehaviour
 {
     public void PlayAgain()
     {
-        FindObjectOfType<SoundManager>().PlaySoundEffect("Menu Select");
+        SoundManager.Instance.PlaySoundEffect("Menu Select");
         GameManager.Instance.UpdateState(GameState.PlayState);
     }
 
     public void ExitGame()
     {
-        FindObjectOfType<SoundManager>().PlaySoundEffect("Menu Select");
+        SoundManager.Instance.PlaySoundEffect("Menu Select");
         GameManager.Instance.UpdateState(GameState.MenuState);
     }
 

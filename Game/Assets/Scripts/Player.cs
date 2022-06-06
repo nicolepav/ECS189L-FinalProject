@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
             col.gameObject.SetActive(false);
             GameManager.Instance.SavedFish++;
             HUDManager.Instance.UpdateScore();
-            FindObjectOfType<SoundManager>().PlaySoundEffect("Save Fish");
+            SoundManager.Instance.PlaySoundEffect("Save Fish");
         }
     }
 }

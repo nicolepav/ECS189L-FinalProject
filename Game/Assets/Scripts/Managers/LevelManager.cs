@@ -46,12 +46,12 @@ public class LevelManager : MonoBehaviour
         SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(levels[_currentLevelIndex].levelName));
         scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelIndex));
         player.transform.position = levels[_currentLevelIndex].spawnLocation;
-        FindObjectOfType<SoundManager>().PlaySoundEffect("Teleport");
+        SoundManager.Instance.PlaySoundEffect("Teleport");
     }
 
     private void ResetLevel(GameObject player)
     {
-        FindObjectOfType<SoundManager>().PlaySoundEffect("Death");
+        SoundManager.Instance.PlaySoundEffect("Death");
         player.transform.position = levels[_currentLevelIndex].spawnLocation;
         HUDManager.Instance.UpdateBubbleCount();
     }
@@ -77,7 +77,7 @@ public class LevelManager : MonoBehaviour
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
-            FindObjectOfType<SoundManager>().PlayMusicTrack("Gameplay BGM");
+            SoundManager.Instance.PlayMusicTrack("Gameplay BGM");
             
             
             if (_prologue)
@@ -99,10 +99,10 @@ public class LevelManager : MonoBehaviour
         {
             _gameOver = true;
             _prologue = false;
-            FindObjectOfType<SoundManager>().PlaySoundEffect("Death");
+            SoundManager.Instance.PlaySoundEffect("Death");
             HUDManager.Instance.Hide();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("GameOver"));
-            FindObjectOfType<SoundManager>().PlayMusicTrack("Game Over");
+            SoundManager.Instance.PlayMusicTrack("Game Over");
             scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelIndex));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
@@ -121,7 +121,7 @@ public class LevelManager : MonoBehaviour
             scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex-1].levelIndex));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
-            FindObjectOfType<SoundManager>().PlayMusicTrack("Ending");
+            SoundManager.Instance.PlayMusicTrack("Ending");
         }
     }
 
@@ -130,7 +130,7 @@ public class LevelManager : MonoBehaviour
         if (gameState == GameState.MenuState)
         {
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Title"));
-            FindObjectOfType<SoundManager>().PlayMusicTrack("Title");
+            SoundManager.Instance.PlayMusicTrack("Title");
             
             if(_gameOver)
                 scenesToLoad.Add(SceneManager.UnloadSceneAsync("GameOver"));

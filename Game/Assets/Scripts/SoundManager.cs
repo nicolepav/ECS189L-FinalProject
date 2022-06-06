@@ -12,6 +12,8 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager Instance;
+
     [SerializeField]
     private AudioMixerGroup musicMixerGroup;
 
@@ -31,6 +33,8 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
+        Instance = this;
+
         foreach (var track in this.musicTracks)
         {
             track.audioSource = this.gameObject.AddComponent<AudioSource>();
@@ -58,7 +62,7 @@ public class SoundManager : MonoBehaviour
     }
 
     // To play music track from a script, use:
-    // FindObjectOfType<SoundManager>().PlayMusicTrack("[Name of Audio Asset]");
+    // SoundManager.Instance.PlayMusicTrack("[Name of Audio Asset]");
     public void PlayMusicTrack(string title)
     {
         var track = this.musicTracks.Find(track => track.title == title);
@@ -87,7 +91,7 @@ public class SoundManager : MonoBehaviour
     }
 
     // To play sound effect from a script, use:
-    // FindObjectOfType<SoundManager>().PlaySoundEffect("[Name of Audio Asset]");
+    // SoundManager.Instance.PlaySoundEffect("[Name of Audio Asset]");
     public void PlaySoundEffect(string title)
     {
         var track = this.sfxClips.Find(track => track.title == title);

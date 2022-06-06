@@ -7,7 +7,7 @@ public class Prologue : MonoBehaviour
     
     public void ProceedToGame()
     {
-        FindObjectOfType<SoundManager>().PlaySoundEffect("Menu Select");
+        SoundManager.Instance.PlaySoundEffect("Menu Select");
         GameManager.Instance.UpdateState(GameState.PlayState);
     }
 

@@ -59,7 +59,7 @@ namespace PlayerCommand
                 rigidBody.velocity = new Vector2(dx, dy);
 
                 // Jump sound effect.
-                FindObjectOfType<SoundManager>().PlaySoundEffect("Jump");
+                SoundManager.Instance.PlaySoundEffect("Jump");
             }
         }
     }

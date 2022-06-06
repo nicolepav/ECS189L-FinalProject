@@ -28,7 +28,7 @@ namespace PlayerCommand
                 gameObject.GetComponent<Player>().GetCamController().rotateCamera(-1);
 
                 // Play sound effect.
-                FindObjectOfType<SoundManager>().PlaySoundEffect("Rotation");
+                SoundManager.Instance.PlaySoundEffect("Rotation");
             }
         }
     }
