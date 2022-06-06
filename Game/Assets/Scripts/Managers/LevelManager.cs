@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
     private bool _prologue = false;
     private bool _gameOver = false;
     private bool _end = false;
+    // Minimum number of fished needed to be saved to win.
+    private const int MinimumFish = 30;
     
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
@@ -38,7 +40,13 @@ public class LevelManager : MonoBehaviour
         _currentLevelIndex++;
         if (_currentLevelIndex == levels.Length)
         {
-            GameManager.Instance.UpdateState(GameState.EndingState);
+            if (GameManager.Instance.SavedFish >= MinimumFish)
+                GameManager.Instance.UpdateState(GameState.EndingState);
+            else
+            {
+                GameManager.Instance.UpdateState(GameState.GameOverState);
+                _currentLevelIndex--;
+            }
             return;
         }
         
