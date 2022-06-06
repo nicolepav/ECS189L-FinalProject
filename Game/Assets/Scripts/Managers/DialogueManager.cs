@@ -32,7 +32,6 @@ public class DialogueManager : MonoBehaviour
         _activeMessage = 0;
         DisplayMessage();
         backgroundBox.LeanScale(Vector3.one, OpenTime);
-        GameManager.Instance.UpdateState(GameState.DialogueState);
     }
 
     void DisplayMessage()
@@ -57,7 +56,6 @@ public class DialogueManager : MonoBehaviour
         else
         {
             backgroundBox.LeanScale(Vector3.zero, CloseTime).setEaseInOutExpo();
-            GameManager.Instance.UpdateState(GameState.PlayState);
             GameManager.Instance.SavedFish++;
             Debug.Log(GameManager.Instance.SavedFish);
         }
@@ -75,7 +73,7 @@ public class DialogueManager : MonoBehaviour
     }
     void Update()
     {
-        if (GameManager.Instance.GetState() == GameState.DialogueState && Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             NextMessage();
         }

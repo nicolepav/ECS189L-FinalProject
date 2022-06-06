@@ -58,7 +58,6 @@ public enum GameState
     MenuState,
     PrologueState,
     PlayState,
-    DialogueState,
     GameOverState,
     EndingState
 }
