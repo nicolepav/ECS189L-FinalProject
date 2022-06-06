@@ -29,15 +29,15 @@ The player possesses three lives. A life is lost when the player falls outside o
 
 *E* - Proceed with Dialogue
 
-*Q* - Pause Game
+*Esc* - Pause Game
 
 *Left Click* - Rotate Camera/Gravity Clockwise
 
 *Right Click* - Rotate Camera/Gravity Counter Clockwise
 
-*Space* - Rotate Camera/Gravity Clockwise
+*Space* - Rotate Camera/Gravity
 
-*Alt* - Rotate Camera/Gravity Counter Clockwise
+*Alt* - Rotate Camera/Gravity
 
 **If you did work that should be factored in to your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
 
@@ -53,6 +53,16 @@ Here is an example:
 *Procedural Terrain* - The background of the game consists of procedurally-generated terrain that is produced with Perlin noise. This terrain can be modified by the game at run-time via a call to its script methods. The intent is to allow the player to modify the terrain. This system is based on the component design pattern and the procedural content generation portions of the course. [The PCG terrain generation script](https://github.com/dr-jam/CameraControlExercise/blob/513b927e87fc686fe627bf7d4ff6ff841cf34e9f/Obscura/Assets/Scripts/TerrainGenerator.cs#L6).
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
+
+## Producer ##
+
+For the Producer role, I took on a variety of tasks to get everyone started on their work and to provide structure to the team's workflow.
+- Provided core game mechanics to choose 
+- Created plan documents. [Example 1](https://docs.google.com/document/d/1L_-KapFFqVLW7nH1vKymIR69Zfj9aqQ6Q5n8fLTV3gM/edit?usp=sharing). [Example 2](https://docs.google.com/document/d/1x3OArdw_3qsi2HWnK5gOct_I8iMRDlUz_z-KU1Y-wR8/edit?usp=sharing).
+- Scheduled goal deadlines and synchronous 1-hour discord meetings; assigned tasks to team members.
+- Provided ideas and suggestions over several aspects throughout the development of the game.
+
+In addition, I conducted 5 playtest sessions (Sally, Aelin, Keejay, Sep, Vince).
 
 ## User Interface
 
