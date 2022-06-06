@@ -61,7 +61,6 @@ The premise of this game is that the blobfish can move around in 4 directions of
 
 ## Animation and Visuals
 
-**Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 Since the game was underwater, the graphics went for a world of underwater caves and things you would find in the ocean. Borders are clearly marked (except on level 4) with a tileset that looks rough rocks that seperate the player from the safe space to the dark unknown that is the outside. Platform that create both obstacle and platforms included seaweed blocks (level 1), rocks (level 2 & 3), metal parts (level 4) and gears (level 5). All the art was done in pixels with a simple color palatte and subtle shading, giving a nolstagic feel 8-bit game feel. 
 
 The blobfish is main character so it is the only sprite that is animated. When it is idle or sliding on a platform, its animations are eye blinking and tail wagging. Once it jumps into the air, it swims with it tail and its facial expression changes. The clownfishes that are being trapped then rescued are brightly colored to standout from the background for visbility and they have a sad face since they are trapped. The messenger pearl was designed to also standout but look wise and feel like a information/narrative guide to the player.
@@ -131,7 +130,6 @@ wet, watery sounds like bubbles and splashing to complement the underwater theme
 
 ## Narrative Design
 
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 The game followed the story of one blobfish's adventure discovering the ancient art of gravity maniputlation which the prologue gave context to. On each level, there is a Messenger Pearl that the player will talk to that give them a little more information about what's going on in the world that he is completing his rescue mission in. At the end, the epilogue provides insight to the future of now the gravity-defying blobfish and his new life. 
 
 As the levels advance, shapes the maps helped the narrative too. It provided the world that the blobfish travels in and the stories that the messsenger pearl would tell.
