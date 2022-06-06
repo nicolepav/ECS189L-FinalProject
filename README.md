@@ -1,4 +1,9 @@
 ![#BLOB BOI](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/LOGO2.png)
+
+
+
+## Press Flyer Available Here: [CLICK](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/Press%20Kit.pdf)
+
 ### Developers
 ___
 
@@ -23,3 +28,11 @@ Deep in the ocean, Blob Boi's life is overturned after barely escaping a fishing
 ___
 ### Gameplay Screenshots
 ___
+
+![](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/gameplay6.PNG)
+![](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/gameplay1.PNG)
+![](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/gameplay2.PNG)
+![](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/gameplay3.PNG)
+![](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/gameplay5.PNG)
+![](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/gameplay4.PNG)
+
