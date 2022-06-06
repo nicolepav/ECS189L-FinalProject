@@ -2,7 +2,7 @@
 
 
 
-## Press Flyer Available Here: [CLICK](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/Press%20Kit.pdf)
+## Press Flyer Available [HERE](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/Press%20Kit.pdf), Trailer/Demo [HERE](https://youtu.be/wfalc53Injc)
 
 ### Developers
 ___
