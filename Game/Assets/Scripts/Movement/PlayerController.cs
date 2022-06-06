@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("isJumping", false);
             if (this.inAir)
             {
-                FindObjectOfType<SoundManager>().PlaySoundEffect("Land");
+                SoundManager.Instance.PlaySoundEffect("Land");
                 this.inAir = false;
             }
         }

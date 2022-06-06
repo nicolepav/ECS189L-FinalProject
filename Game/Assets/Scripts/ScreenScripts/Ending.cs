@@ -7,7 +7,7 @@ public class Ending : MonoBehaviour
 {
     public void JumpToGameOver()
     {
-        FindObjectOfType<SoundManager>().PlaySoundEffect("Menu Select");
+        SoundManager.Instance.PlaySoundEffect("Menu Select");
         GameManager.Instance.UpdateState(GameState.MenuState);
     }
 }
