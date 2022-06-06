@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da452a2aed33b03498090df737b8dd19, type: 3}
-  m_Name: Shark Actor
+  m_Name: Crying Clownfish
   m_EditorClassIdentifier: 
-  name: Shark
-  actorImage: {fileID: 21300000, guid: a9b4b95728243a4459703020ab3d3c63, type: 3}
+  name: Crying Clownfish
+  actorImage: {fileID: 21300000, guid: 0e2ff96c213b348189c6a3714f9a1d62, type: 3}
