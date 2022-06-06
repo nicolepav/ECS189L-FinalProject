@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,31 +7,37 @@ public class Pause : MonoBehaviour
 {
     //When the game is paused, a panel will be displayed to tell the player that the game is currently paused.
     [SerializeField] GameObject pausedScreen;
-    
+    public static Pause Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Update is called once per frame
     void Update()
     {
 
-        //The player can press Q to pause the game
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
+            if (!GameManager.Instance.Paused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                ResumeGame();
+            }
         }
 
-        //The player can press Z to resume the game
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            ResumeGame();
-        }
-        
     }
 
     //Pauses and freezes the game
-    public void PauseGame()
+    void PauseGame()
     {
         pausedScreen.SetActive(true);
         Time.timeScale = 0f;
+        GameManager.Instance.Paused = true;
     }
 
     //Resumes the game 
@@ -38,6 +45,7 @@ public class Pause : MonoBehaviour
     {
         pausedScreen.SetActive(false);
         Time.timeScale = 1f;
+        GameManager.Instance.Paused = false;
     }
 
 }
