@@ -63,6 +63,12 @@ public class SoundManager : MonoBehaviour
     {
         var track = this.musicTracks.Find(track => track.title == title);
 
+        if (this.trackPlaying == track)
+        {
+            // Do not duplicate same music track.
+            return;
+        }
+
         if(null == track) 
         {
             Debug.Log("Sound track not found: " + title);
