@@ -116,8 +116,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W)) 
         {
-            this.up.Execute(this.gameObject);
-            _animator.SetBool("isJumping", true);
+            if (IsGrounded())
+            {
+                this.up.Execute(this.gameObject);
+                _animator.SetBool("isJumping", true);
+            }
         }
 
         if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space) ) 
