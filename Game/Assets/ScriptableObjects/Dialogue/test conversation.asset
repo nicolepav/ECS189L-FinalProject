@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - actorId: 0
-    message: Im talking to myself
+    message: The net is so scary! :(
   actors:
   - {fileID: 11400000, guid: 659e739bc8df58146beb2609aebad346, type: 2}

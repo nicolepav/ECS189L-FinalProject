@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 603, y: 53}
+  m_AnchoredPosition: {x: 881, y: 37.5}
   m_SizeDelta: {x: 400, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &86659957
@@ -843,8 +843,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 134.53876, y: -45.933533}
-  m_SizeDelta: {x: -538.0935, y: 139.1268}
+  m_AnchoredPosition: {x: 254.25, y: -57.75}
+  m_SizeDelta: {x: -853.4911, y: 115.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1114573500
 CanvasRenderer:
@@ -889,10 +889,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+    quis nostrud exercitation ullamco
 --- !u!1 &1276456980
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 14.126526, y: 184.8526}
+  m_AnchoredPosition: {x: 14.126465, y: 184.8526}
   m_SizeDelta: {x: -84.7732, y: 296.7842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276456982
