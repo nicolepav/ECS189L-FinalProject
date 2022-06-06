@@ -163,7 +163,7 @@ https://drive.google.com/drive/u/2/folders/1PKW2UUPsZdSID_VtXMKINGNhd-wrms3w
 
 **Summarize the key findings from your gameplay tests.**
 
-Mainly we found that the testers were impressed by the graphics/feel, but this took some getting used to for some. Some testers got really invested and truly wanted to save as many fish as possible. The testers mainly easily understood what their goal was and how to accomplish that. 
+Mainly we found that the testers were impressed by the graphics/feel, but this took some getting used to for some. We noticed specifically that some testers needed to get used to the timing for when they rotate the gravity so that they don't miss the fish they intend to save. Some testers got really invested and truly wanted to save as many fish as possible. The testers mainly easily understood what their goal was and how to accomplish that. In a few cases, since the testing took place during finals week, many testers had final exams to study for and their answers may not have been as thoughtful, but they were still impressed with our game. Some testers gave very specific feedback about their experience such as including how many fish left in the level. 
 
 ## Narrative Design
 
