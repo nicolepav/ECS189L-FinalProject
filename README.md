@@ -1,7 +1,4 @@
-# BLOB BOI
-
-
-___
+![#BLOB BOI](https://github.com/nicolepav/ECS189L-FinalProject/blob/main/LOGO2.png)
 ### Developers
 ___
 
