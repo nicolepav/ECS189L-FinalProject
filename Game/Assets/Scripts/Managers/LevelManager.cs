@@ -144,6 +144,14 @@ public class LevelManager : MonoBehaviour
                 scenesToLoad.Add(SceneManager.UnloadSceneAsync("GameOver"));
             else if(_end)
                 scenesToLoad.Add(SceneManager.UnloadSceneAsync("Ending"));
+            else if (GameManager.Instance.Paused)
+            {
+                HUDManager.Instance.Hide();
+                scenesToLoad.Add(SceneManager.UnloadSceneAsync(levels[_currentLevelIndex].levelIndex));
+                scenesToLoad.Add(SceneManager.UnloadSceneAsync("Background"));
+                scenesToLoad.Add(SceneManager.UnloadSceneAsync("Player"));
+                GameManager.Instance.Paused = false;
+            }
 
             _prologue = false;
         }

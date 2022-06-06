@@ -95,61 +95,64 @@ public class PlayerController : MonoBehaviour
     // https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html
     void Update() 
     {
-        transform.eulerAngles = new Vector3(0,0,0);
-
-
-        // can use GetAxis for joystick control instead of wasd
-        // would have to set up axis so it is not mouse
-        // https://docs.unity3d.com/ScriptReference/Input.GetAxis.html
-
-        if (Input.GetKey(KeyCode.A)) 
+        if (!GameManager.Instance.Paused)
         {
-            // Debug.Log("A pressed");
-            this.left.Execute(this.gameObject);
-        }
+            transform.eulerAngles = new Vector3(0, 0, 0);
 
-        if (Input.GetKey(KeyCode.D)) 
-        {
-            // Debug.Log("D pressed");
-            this.right.Execute(this.gameObject);
-        }
 
-        if (Input.GetKeyDown(KeyCode.W)) 
-        {
+            // can use GetAxis for joystick control instead of wasd
+            // would have to set up axis so it is not mouse
+            // https://docs.unity3d.com/ScriptReference/Input.GetAxis.html
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                // Debug.Log("A pressed");
+                this.left.Execute(this.gameObject);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                // Debug.Log("D pressed");
+                this.right.Execute(this.gameObject);
+            }
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (IsGrounded())
+                {
+                    this.up.Execute(this.gameObject);
+                    _animator.SetBool("isJumping", true);
+                }
+            }
+
+            if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space))
+            {
+                this.adjustGravityLeft.Execute(this.gameObject);
+
+            }
+
+            if (Input.GetButtonDown("Fire2"))
+            {
+                this.adjustGravityRight.Execute(this.gameObject);
+            }
+
+            this.SetJump();
+
+            // do player animation here
             if (IsGrounded())
             {
-                this.up.Execute(this.gameObject);
-                _animator.SetBool("isJumping", true);
+                _animator.SetBool("isJumping", false);
+                if (this.inAir)
+                {
+                    SoundManager.Instance.PlaySoundEffect("Land");
+                    this.inAir = false;
+                }
             }
-        }
-
-        if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space) ) 
-        {
-            this.adjustGravityLeft.Execute(this.gameObject);
-            
-        }
-
-        if (Input.GetButtonDown("Fire2") || Input.GetKeyDown(KeyCode.P))
-        {
-            this.adjustGravityRight.Execute(this.gameObject);
-        }
-
-        this.SetJump();
-
-        // do player animation here
-        if (IsGrounded())
-        {
-            _animator.SetBool("isJumping", false);
-            if (this.inAir)
+            else
             {
-                SoundManager.Instance.PlaySoundEffect("Land");
-                this.inAir = false;
+                _animator.SetBool("isJumping", true);
+                this.inAir = true;
             }
-        }
-        else
-        {
-            _animator.SetBool("isJumping", true);
-            this.inAir = true;
         }
     }
     
