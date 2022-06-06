@@ -15,7 +15,6 @@ public class Pause : MonoBehaviour
         //The player can press Q to pause the game
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("BangPause1");
             PauseGame();
         }
 
