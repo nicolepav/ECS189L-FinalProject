@@ -84,7 +84,7 @@ WASD movement, left mouse & space rotate right (clockwise), right mouse & alt ro
 
 - MacOS
 
-WASD movement, left mouse & space rotate right (clockwise), right mouse & alt rotate left (clockwise), q to pause, e to escape/continue dialog interactions
+WASD movement, left mouse & space rotate right (clockwise), right mouse & option rotate left (clockwise), q to pause, e to escape/continue dialog interactions
 
 - Web
 
