@@ -37,12 +37,13 @@ public class Player : MonoBehaviour
     {
         if (col.CompareTag("levelTrigger"))
         {
-            // Debug.Log("Level Trigger activated");
+            Debug.Log("Level Trigger activated");
             GameManager.Instance.UpdateLevel(player);
             
         }
         else if (col.CompareTag("fish"))
         {
+            Debug.Log("fish triggered");
             col.gameObject.SetActive(false);
             GameManager.Instance.SavedFish++;
             HUDManager.Instance.UpdateScore();

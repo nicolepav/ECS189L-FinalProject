@@ -71,7 +71,7 @@ public class SoundManager : MonoBehaviour
 
         if(null == track) 
         {
-            Debug.Log("Sound track not found: " + title);
+            // Debug.Log("Sound track not found: " + title);
             return;
         }
         
@@ -83,7 +83,7 @@ public class SoundManager : MonoBehaviour
 
         this.trackPlaying = track;
 
-        Debug.Log("now playing " + title);
+        // Debug.Log("now playing " + title);
     }
 
     // To play sound effect from a script, use:
@@ -94,13 +94,13 @@ public class SoundManager : MonoBehaviour
 
         if(null == track) 
         {
-            Debug.Log("Sound track not found: " + title);
+            // Debug.Log("Sound track not found: " + title);
             return;
         }
 
         track.audioSource.Play();
 
-        Debug.Log("sound effect! " + title);
+        // Debug.Log("sound effect! " + title);
     }
 
     public void StopSoundEffect(string title)
@@ -109,7 +109,7 @@ public class SoundManager : MonoBehaviour
 
         if(null == track)
         {
-            Debug.Log("Sound track not found: " + title);
+            // Debug.Log("Sound track not found: " + title);
             return;
         }
 
