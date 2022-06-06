@@ -56,7 +56,10 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## User Interface
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+I implemented various user interface elements as part of our game to communicate various information to the player. I implemented a title scene, which is the starting point of the game. The title scene has a start button that the player clicks on to play the game. The start button leads to the prologue scene, which tells the story behind our game to the player. Upon pressing enter, the game officially starts, entering the gameplay scene. In the actual game, I implemented a key map to communicate to the player what happens when certain keys are pressed. The player has 3 lives, and the number of lives that the player has left is shown by how many bubbles are displayed. I implemented the functionality so that one bubble disappears every time a life is lost. In the top right, the number of fish successfully saved is displayed with a counter. Pressing the escape button can pause as well as unpause the game. I also implemented an ending scene which tells the player the ending story(other group members then modified this to communicate whether the player won or lost) that leads to an option to play again. 
+
+To communicate that a fish has been successfully saved or that the player is entering a new level, our group member with the audio subrole implemented sound effects.
+
 
 ## Movement/Physics
 
