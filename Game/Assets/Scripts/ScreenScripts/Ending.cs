@@ -7,6 +7,6 @@ public class Ending : MonoBehaviour
 {
     public void JumpToGameOver()
     {
-        GameManager.Instance.UpdateState(GameState.PlayState);
+        GameManager.Instance.UpdateState(GameState.MenuState);
     }
 }

@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Title"));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
         HUDManager.Instance.Hide();
     }
     
@@ -59,6 +60,7 @@ public class LevelManager : MonoBehaviour
             _prologue = true;
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Prologue"));
             scenesToLoad.Add(SceneManager.UnloadSceneAsync("Title"));
+            
         }
     }
 
@@ -72,7 +74,7 @@ public class LevelManager : MonoBehaviour
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Background"));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive));
-            scenesToLoad.Add(SceneManager.LoadSceneAsync("Sound", LoadSceneMode.Additive));
+            
             
             if (_prologue)
                 scenesToLoad.Add(SceneManager.UnloadSceneAsync("Prologue"));
